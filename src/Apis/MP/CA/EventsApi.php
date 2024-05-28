@@ -137,8 +137,9 @@ class EventsApi extends BaseApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        $contentType = $response->getHeader('Content-Type')[0] ?? '';
                         if ('\Walmart\Models\MP\CA\Events\UploadResponse' !== 'string') {
-                            $content = json_decode($content);
+                            $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                         }
                     }
 
@@ -150,8 +151,9 @@ class EventsApi extends BaseApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                $contentType = $response->getHeader('Content-Type')[0] ?? '';
                 if ($returnType !== 'string') {
-                    $content = json_decode($content);
+                    $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                 }
             }
 
@@ -453,8 +455,9 @@ class EventsApi extends BaseApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        $contentType = $response->getHeader('Content-Type')[0] ?? '';
                         if ('\Walmart\Models\MP\CA\Events\UploadResponse' !== 'string') {
-                            $content = json_decode($content);
+                            $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                         }
                     }
 
@@ -466,8 +469,9 @@ class EventsApi extends BaseApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                $contentType = $response->getHeader('Content-Type')[0] ?? '';
                 if ($returnType !== 'string') {
-                    $content = json_decode($content);
+                    $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                 }
             }
 
@@ -1026,8 +1030,9 @@ class EventsApi extends BaseApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        $contentType = $response->getHeader('Content-Type')[0] ?? '';
                         if ('\Walmart\Models\MP\CA\Events\PromoItemResponse' !== 'string') {
-                            $content = json_decode($content);
+                            $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                         }
                     }
 
@@ -1039,8 +1044,9 @@ class EventsApi extends BaseApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                $contentType = $response->getHeader('Content-Type')[0] ?? '';
                 if ($returnType !== 'string') {
-                    $content = json_decode($content);
+                    $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                 }
             }
 
@@ -1338,8 +1344,9 @@ class EventsApi extends BaseApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        $contentType = $response->getHeader('Content-Type')[0] ?? '';
                         if ('\Walmart\Models\MP\CA\Events\PromoItemResponse' !== 'string') {
-                            $content = json_decode($content);
+                            $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                         }
                     }
 
@@ -1351,8 +1358,9 @@ class EventsApi extends BaseApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                $contentType = $response->getHeader('Content-Type')[0] ?? '';
                 if ($returnType !== 'string') {
-                    $content = json_decode($content);
+                    $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                 }
             }
 
@@ -1654,8 +1662,9 @@ class EventsApi extends BaseApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        $contentType = $response->getHeader('Content-Type')[0] ?? '';
                         if ('\Walmart\Models\MP\CA\Events\EventResponse' !== 'string') {
-                            $content = json_decode($content);
+                            $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                         }
                     }
 
@@ -1667,8 +1676,9 @@ class EventsApi extends BaseApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                $contentType = $response->getHeader('Content-Type')[0] ?? '';
                 if ($returnType !== 'string') {
-                    $content = json_decode($content);
+                    $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                 }
             }
 
@@ -2220,8 +2230,9 @@ class EventsApi extends BaseApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        $contentType = $response->getHeader('Content-Type')[0] ?? '';
                         if ('\Walmart\Models\MP\CA\Events\ItemCountResponse' !== 'string') {
-                            $content = json_decode($content);
+                            $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                         }
                     }
 
@@ -2233,8 +2244,9 @@ class EventsApi extends BaseApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                $contentType = $response->getHeader('Content-Type')[0] ?? '';
                 if ($returnType !== 'string') {
-                    $content = json_decode($content);
+                    $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                 }
             }
 

@@ -142,8 +142,9 @@ class OrdersApi extends BaseApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        $contentType = $response->getHeader('Content-Type')[0] ?? '';
                         if ('string' !== 'string') {
-                            $content = json_decode($content);
+                            $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                         }
                     }
 
@@ -153,8 +154,9 @@ class OrdersApi extends BaseApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        $contentType = $response->getHeader('Content-Type')[0] ?? '';
                         if ('\Walmart\Models\MP\MX\Orders\ErrorResponse' !== 'string') {
-                            $content = json_decode($content);
+                            $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                         }
                     }
 
@@ -164,8 +166,9 @@ class OrdersApi extends BaseApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        $contentType = $response->getHeader('Content-Type')[0] ?? '';
                         if ('\Walmart\Models\MP\MX\Orders\ErrorResponse' !== 'string') {
-                            $content = json_decode($content);
+                            $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                         }
                     }
 
@@ -177,8 +180,9 @@ class OrdersApi extends BaseApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                $contentType = $response->getHeader('Content-Type')[0] ?? '';
                 if ($returnType !== 'string') {
-                    $content = json_decode($content);
+                    $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                 }
             }
 
@@ -504,8 +508,9 @@ class OrdersApi extends BaseApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        $contentType = $response->getHeader('Content-Type')[0] ?? '';
                         if ('string' !== 'string') {
-                            $content = json_decode($content);
+                            $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                         }
                     }
 
@@ -515,8 +520,9 @@ class OrdersApi extends BaseApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        $contentType = $response->getHeader('Content-Type')[0] ?? '';
                         if ('\Walmart\Models\MP\MX\Orders\ErrorResponse' !== 'string') {
-                            $content = json_decode($content);
+                            $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                         }
                     }
 
@@ -526,8 +532,9 @@ class OrdersApi extends BaseApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        $contentType = $response->getHeader('Content-Type')[0] ?? '';
                         if ('\Walmart\Models\MP\MX\Orders\ErrorResponse' !== 'string') {
-                            $content = json_decode($content);
+                            $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                         }
                     }
 
@@ -539,8 +546,9 @@ class OrdersApi extends BaseApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                $contentType = $response->getHeader('Content-Type')[0] ?? '';
                 if ($returnType !== 'string') {
-                    $content = json_decode($content);
+                    $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                 }
             }
 
@@ -866,8 +874,9 @@ class OrdersApi extends BaseApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        $contentType = $response->getHeader('Content-Type')[0] ?? '';
                         if ('string' !== 'string') {
-                            $content = json_decode($content);
+                            $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                         }
                     }
 
@@ -877,8 +886,9 @@ class OrdersApi extends BaseApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        $contentType = $response->getHeader('Content-Type')[0] ?? '';
                         if ('\Walmart\Models\MP\MX\Orders\ErrorResponse' !== 'string') {
-                            $content = json_decode($content);
+                            $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                         }
                     }
 
@@ -888,8 +898,9 @@ class OrdersApi extends BaseApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        $contentType = $response->getHeader('Content-Type')[0] ?? '';
                         if ('\Walmart\Models\MP\MX\Orders\ErrorResponse' !== 'string') {
-                            $content = json_decode($content);
+                            $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                         }
                     }
 
@@ -901,8 +912,9 @@ class OrdersApi extends BaseApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                $contentType = $response->getHeader('Content-Type')[0] ?? '';
                 if ($returnType !== 'string') {
-                    $content = json_decode($content);
+                    $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                 }
             }
 
@@ -1248,8 +1260,9 @@ class OrdersApi extends BaseApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        $contentType = $response->getHeader('Content-Type')[0] ?? '';
                         if ('\Walmart\Models\MP\MX\Orders\WFSOrderResponse' !== 'string') {
-                            $content = json_decode($content);
+                            $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                         }
                     }
 
@@ -1259,8 +1272,9 @@ class OrdersApi extends BaseApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        $contentType = $response->getHeader('Content-Type')[0] ?? '';
                         if ('\Walmart\Models\MP\MX\Orders\ErrorResponse' !== 'string') {
-                            $content = json_decode($content);
+                            $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                         }
                     }
 
@@ -1270,8 +1284,9 @@ class OrdersApi extends BaseApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        $contentType = $response->getHeader('Content-Type')[0] ?? '';
                         if ('\Walmart\Models\MP\MX\Orders\ErrorResponse' !== 'string') {
-                            $content = json_decode($content);
+                            $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                         }
                     }
 
@@ -1283,8 +1298,9 @@ class OrdersApi extends BaseApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                $contentType = $response->getHeader('Content-Type')[0] ?? '';
                 if ($returnType !== 'string') {
-                    $content = json_decode($content);
+                    $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                 }
             }
 
@@ -1692,8 +1708,9 @@ class OrdersApi extends BaseApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        $contentType = $response->getHeader('Content-Type')[0] ?? '';
                         if ('\Walmart\Models\MP\MX\Orders\MxOrderWithCursor' !== 'string') {
-                            $content = json_decode($content);
+                            $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                         }
                     }
 
@@ -1703,8 +1720,9 @@ class OrdersApi extends BaseApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        $contentType = $response->getHeader('Content-Type')[0] ?? '';
                         if ('\Walmart\Models\MP\MX\Orders\ErrorResponse' !== 'string') {
-                            $content = json_decode($content);
+                            $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                         }
                     }
 
@@ -1714,8 +1732,9 @@ class OrdersApi extends BaseApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        $contentType = $response->getHeader('Content-Type')[0] ?? '';
                         if ('\Walmart\Models\MP\MX\Orders\ErrorResponse' !== 'string') {
-                            $content = json_decode($content);
+                            $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                         }
                     }
 
@@ -1727,8 +1746,9 @@ class OrdersApi extends BaseApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                $contentType = $response->getHeader('Content-Type')[0] ?? '';
                 if ($returnType !== 'string') {
-                    $content = json_decode($content);
+                    $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                 }
             }
 
@@ -2138,8 +2158,9 @@ class OrdersApi extends BaseApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        $contentType = $response->getHeader('Content-Type')[0] ?? '';
                         if ('\Walmart\Models\MP\MX\Orders\WFSOrderResponse' !== 'string') {
-                            $content = json_decode($content);
+                            $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                         }
                     }
 
@@ -2151,8 +2172,9 @@ class OrdersApi extends BaseApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                $contentType = $response->getHeader('Content-Type')[0] ?? '';
                 if ($returnType !== 'string') {
-                    $content = json_decode($content);
+                    $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                 }
             }
 
@@ -2506,8 +2528,9 @@ class OrdersApi extends BaseApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        $contentType = $response->getHeader('Content-Type')[0] ?? '';
                         if ('string' !== 'string') {
-                            $content = json_decode($content);
+                            $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                         }
                     }
 
@@ -2517,8 +2540,9 @@ class OrdersApi extends BaseApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        $contentType = $response->getHeader('Content-Type')[0] ?? '';
                         if ('\Walmart\Models\MP\MX\Orders\ErrorResponse' !== 'string') {
-                            $content = json_decode($content);
+                            $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                         }
                     }
 
@@ -2528,8 +2552,9 @@ class OrdersApi extends BaseApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        $contentType = $response->getHeader('Content-Type')[0] ?? '';
                         if ('\Walmart\Models\MP\MX\Orders\ErrorResponse' !== 'string') {
-                            $content = json_decode($content);
+                            $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                         }
                     }
 
@@ -2541,8 +2566,9 @@ class OrdersApi extends BaseApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                $contentType = $response->getHeader('Content-Type')[0] ?? '';
                 if ($returnType !== 'string') {
-                    $content = json_decode($content);
+                    $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                 }
             }
 
@@ -2849,8 +2875,9 @@ class OrdersApi extends BaseApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        $contentType = $response->getHeader('Content-Type')[0] ?? '';
                         if ('string' !== 'string') {
-                            $content = json_decode($content);
+                            $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                         }
                     }
 
@@ -2860,8 +2887,9 @@ class OrdersApi extends BaseApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        $contentType = $response->getHeader('Content-Type')[0] ?? '';
                         if ('mixed' !== 'string') {
-                            $content = json_decode($content);
+                            $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                         }
                     }
 
@@ -2871,8 +2899,9 @@ class OrdersApi extends BaseApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        $contentType = $response->getHeader('Content-Type')[0] ?? '';
                         if ('\Walmart\Models\MP\MX\Orders\ErrorResponse' !== 'string') {
-                            $content = json_decode($content);
+                            $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                         }
                     }
 
@@ -2884,8 +2913,9 @@ class OrdersApi extends BaseApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                $contentType = $response->getHeader('Content-Type')[0] ?? '';
                 if ($returnType !== 'string') {
-                    $content = json_decode($content);
+                    $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                 }
             }
 
@@ -3201,8 +3231,9 @@ class OrdersApi extends BaseApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        $contentType = $response->getHeader('Content-Type')[0] ?? '';
                         if ('string' !== 'string') {
-                            $content = json_decode($content);
+                            $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                         }
                     }
 
@@ -3212,8 +3243,9 @@ class OrdersApi extends BaseApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        $contentType = $response->getHeader('Content-Type')[0] ?? '';
                         if ('\Walmart\Models\MP\MX\Orders\ErrorResponse' !== 'string') {
-                            $content = json_decode($content);
+                            $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                         }
                     }
 
@@ -3223,8 +3255,9 @@ class OrdersApi extends BaseApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        $contentType = $response->getHeader('Content-Type')[0] ?? '';
                         if ('\Walmart\Models\MP\MX\Orders\ErrorResponse' !== 'string') {
-                            $content = json_decode($content);
+                            $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                         }
                     }
 
@@ -3236,8 +3269,9 @@ class OrdersApi extends BaseApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                $contentType = $response->getHeader('Content-Type')[0] ?? '';
                 if ($returnType !== 'string') {
-                    $content = json_decode($content);
+                    $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                 }
             }
 

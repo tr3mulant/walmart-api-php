@@ -125,8 +125,9 @@ class AuthenticationApi extends BaseApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        $contentType = $response->getHeader('Content-Type')[0] ?? '';
                         if ('\Walmart\Models\MP\US\Authentication\TokenDetailResponse' !== 'string') {
-                            $content = json_decode($content);
+                            $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                         }
                     }
 
@@ -138,8 +139,9 @@ class AuthenticationApi extends BaseApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                $contentType = $response->getHeader('Content-Type')[0] ?? '';
                 if ($returnType !== 'string') {
-                    $content = json_decode($content);
+                    $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                 }
             }
 
@@ -409,8 +411,9 @@ class AuthenticationApi extends BaseApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        $contentType = $response->getHeader('Content-Type')[0] ?? '';
                         if ('\Walmart\Models\MP\US\Authentication\OAuthToken' !== 'string') {
-                            $content = json_decode($content);
+                            $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                         }
                     }
 
@@ -422,8 +425,9 @@ class AuthenticationApi extends BaseApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                $contentType = $response->getHeader('Content-Type')[0] ?? '';
                 if ($returnType !== 'string') {
-                    $content = json_decode($content);
+                    $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                 }
             }
 

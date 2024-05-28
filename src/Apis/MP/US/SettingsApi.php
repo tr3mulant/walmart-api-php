@@ -144,8 +144,9 @@ class SettingsApi extends BaseApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        $contentType = $response->getHeader('Content-Type')[0] ?? '';
                         if ('\Walmart\Models\MP\US\Settings\ThirdPartyShipNode1[]' !== 'string') {
-                            $content = json_decode($content);
+                            $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                         }
                     }
 
@@ -157,8 +158,9 @@ class SettingsApi extends BaseApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                $contentType = $response->getHeader('Content-Type')[0] ?? '';
                 if ($returnType !== 'string') {
-                    $content = json_decode($content);
+                    $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                 }
             }
 
@@ -438,8 +440,9 @@ class SettingsApi extends BaseApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        $contentType = $response->getHeader('Content-Type')[0] ?? '';
                         if ('\Walmart\Models\MP\US\Settings\ShipNodeResponseUpdate[]' !== 'string') {
-                            $content = json_decode($content);
+                            $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                         }
                     }
 
@@ -451,8 +454,9 @@ class SettingsApi extends BaseApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                $contentType = $response->getHeader('Content-Type')[0] ?? '';
                 if ($returnType !== 'string') {
-                    $content = json_decode($content);
+                    $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                 }
             }
 
@@ -732,8 +736,9 @@ class SettingsApi extends BaseApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        $contentType = $response->getHeader('Content-Type')[0] ?? '';
                         if ('\Walmart\Models\MP\US\Settings\ShippingTemplate' !== 'string') {
-                            $content = json_decode($content);
+                            $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                         }
                     }
 
@@ -745,8 +750,9 @@ class SettingsApi extends BaseApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                $contentType = $response->getHeader('Content-Type')[0] ?? '';
                 if ($returnType !== 'string') {
-                    $content = json_decode($content);
+                    $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                 }
             }
 
@@ -1026,8 +1032,9 @@ class SettingsApi extends BaseApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        $contentType = $response->getHeader('Content-Type')[0] ?? '';
                         if ('\Walmart\Models\MP\US\Settings\ShippingTemplateId' !== 'string') {
-                            $content = json_decode($content);
+                            $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                         }
                     }
 
@@ -1039,8 +1046,9 @@ class SettingsApi extends BaseApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                $contentType = $response->getHeader('Content-Type')[0] ?? '';
                 if ($returnType !== 'string') {
-                    $content = json_decode($content);
+                    $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                 }
             }
 
@@ -1316,8 +1324,9 @@ class SettingsApi extends BaseApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        $contentType = $response->getHeader('Content-Type')[0] ?? '';
                         if ('\Walmart\Models\MP\US\Settings\ThirdPartyShipNode2[]' !== 'string') {
-                            $content = json_decode($content);
+                            $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                         }
                     }
 
@@ -1329,8 +1338,9 @@ class SettingsApi extends BaseApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                $contentType = $response->getHeader('Content-Type')[0] ?? '';
                 if ($returnType !== 'string') {
-                    $content = json_decode($content);
+                    $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                 }
             }
 
@@ -1588,8 +1598,9 @@ class SettingsApi extends BaseApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        $contentType = $response->getHeader('Content-Type')[0] ?? '';
                         if ('\Walmart\Models\MP\US\Settings\ShipNodeResponseUpdate[]' !== 'string') {
-                            $content = json_decode($content);
+                            $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                         }
                     }
 
@@ -1601,8 +1612,9 @@ class SettingsApi extends BaseApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                $contentType = $response->getHeader('Content-Type')[0] ?? '';
                 if ($returnType !== 'string') {
-                    $content = json_decode($content);
+                    $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                 }
             }
 
@@ -1875,8 +1887,9 @@ class SettingsApi extends BaseApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        $contentType = $response->getHeader('Content-Type')[0] ?? '';
                         if ('\Walmart\Models\MP\US\Settings\ShippingTemplatesSummary' !== 'string') {
-                            $content = json_decode($content);
+                            $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                         }
                     }
 
@@ -1888,8 +1901,9 @@ class SettingsApi extends BaseApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                $contentType = $response->getHeader('Content-Type')[0] ?? '';
                 if ($returnType !== 'string') {
-                    $content = json_decode($content);
+                    $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                 }
             }
 
@@ -2141,8 +2155,9 @@ class SettingsApi extends BaseApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        $contentType = $response->getHeader('Content-Type')[0] ?? '';
                         if ('\Walmart\Models\MP\US\Settings\CarrierDetail2[]' !== 'string') {
-                            $content = json_decode($content);
+                            $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                         }
                     }
 
@@ -2154,8 +2169,9 @@ class SettingsApi extends BaseApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                $contentType = $response->getHeader('Content-Type')[0] ?? '';
                 if ($returnType !== 'string') {
-                    $content = json_decode($content);
+                    $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                 }
             }
 
@@ -2407,8 +2423,9 @@ class SettingsApi extends BaseApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        $contentType = $response->getHeader('Content-Type')[0] ?? '';
                         if ('\Walmart\Models\MP\US\Settings\FulfillmentCenterCoverageDetail[]' !== 'string') {
-                            $content = json_decode($content);
+                            $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                         }
                     }
 
@@ -2420,8 +2437,9 @@ class SettingsApi extends BaseApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                $contentType = $response->getHeader('Content-Type')[0] ?? '';
                 if ($returnType !== 'string') {
-                    $content = json_decode($content);
+                    $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                 }
             }
 
@@ -2673,8 +2691,9 @@ class SettingsApi extends BaseApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        $contentType = $response->getHeader('Content-Type')[0] ?? '';
                         if ('\Walmart\Models\MP\US\Settings\PartnerConfigsResponseDTO' !== 'string') {
-                            $content = json_decode($content);
+                            $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                         }
                     }
 
@@ -2686,8 +2705,9 @@ class SettingsApi extends BaseApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                $contentType = $response->getHeader('Content-Type')[0] ?? '';
                 if ($returnType !== 'string') {
-                    $content = json_decode($content);
+                    $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                 }
             }
 
@@ -2939,8 +2959,9 @@ class SettingsApi extends BaseApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        $contentType = $response->getHeader('Content-Type')[0] ?? '';
                         if ('\Walmart\Models\MP\US\Settings\ShippingConfigsResponseDTO' !== 'string') {
-                            $content = json_decode($content);
+                            $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                         }
                     }
 
@@ -2952,8 +2973,9 @@ class SettingsApi extends BaseApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                $contentType = $response->getHeader('Content-Type')[0] ?? '';
                 if ($returnType !== 'string') {
-                    $content = json_decode($content);
+                    $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                 }
             }
 
@@ -3205,8 +3227,9 @@ class SettingsApi extends BaseApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        $contentType = $response->getHeader('Content-Type')[0] ?? '';
                         if ('\Walmart\Models\MP\US\Settings\ShippingTemplateActivationStatus' !== 'string') {
-                            $content = json_decode($content);
+                            $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                         }
                     }
 
@@ -3218,8 +3241,9 @@ class SettingsApi extends BaseApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                $contentType = $response->getHeader('Content-Type')[0] ?? '';
                 if ($returnType !== 'string') {
-                    $content = json_decode($content);
+                    $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                 }
             }
 
@@ -3477,8 +3501,9 @@ class SettingsApi extends BaseApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        $contentType = $response->getHeader('Content-Type')[0] ?? '';
                         if ('\Walmart\Models\MP\US\Settings\ShippingTemplate' !== 'string') {
-                            $content = json_decode($content);
+                            $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                         }
                     }
 
@@ -3490,8 +3515,9 @@ class SettingsApi extends BaseApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                $contentType = $response->getHeader('Content-Type')[0] ?? '';
                 if ($returnType !== 'string') {
-                    $content = json_decode($content);
+                    $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                 }
             }
 
@@ -3773,8 +3799,9 @@ class SettingsApi extends BaseApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        $contentType = $response->getHeader('Content-Type')[0] ?? '';
                         if ('\Walmart\Models\MP\US\Settings\ShipNodeResponseUpdate' !== 'string') {
-                            $content = json_decode($content);
+                            $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                         }
                     }
 
@@ -3786,8 +3813,9 @@ class SettingsApi extends BaseApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                $contentType = $response->getHeader('Content-Type')[0] ?? '';
                 if ($returnType !== 'string') {
-                    $content = json_decode($content);
+                    $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                 }
             }
 
@@ -4071,8 +4099,9 @@ class SettingsApi extends BaseApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        $contentType = $response->getHeader('Content-Type')[0] ?? '';
                         if ('\Walmart\Models\MP\US\Settings\ShippingTemplate' !== 'string') {
-                            $content = json_decode($content);
+                            $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                         }
                     }
 
@@ -4084,8 +4113,9 @@ class SettingsApi extends BaseApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                $contentType = $response->getHeader('Content-Type')[0] ?? '';
                 if ($returnType !== 'string') {
-                    $content = json_decode($content);
+                    $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
                 }
             }
 
