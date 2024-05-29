@@ -5,7 +5,9 @@
         "components": {
           "schemas": {
             "Scopes": {
-              "default": { "reports": "view_only" }
+              "default": {
+                "reports": "view_only"
+              }
             }
           }
         }
@@ -18,7 +20,9 @@
         "components": {
           "schemas": {
             "Scopes": {
-              "default": { "reports": "view_only" }
+              "default": {
+                "reports": "view_only"
+              }
             }
           }
         }
@@ -31,6 +35,30 @@
                 "200": {
                   "content": {
                     "application\/json": {
+                      "schema": {
+                        "$ref": "#\/components\/schemas\/ItemResponses"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "schemas": {}
+      }
+    }
+  },
+  "ca": {
+    "mp": {
+      "items": {
+        "paths": {
+          "\/v3\/ca\/items\/{sku}": {
+            "get": {
+              "responses": {
+                "200": {
+                  "content": {
+                    "application\/xml": {
                       "schema": {
                         "$ref": "#\/components\/schemas\/ItemResponses"
                       }
