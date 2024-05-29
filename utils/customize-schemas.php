@@ -330,7 +330,7 @@ function replaceComponentInlineSchemas(array $components): array
 
                     unset($component['properties'][$propertyName]);
 
-                    $idx = array_search($propertyName, $component['required'] ?? []);
+                    $idx = array_search($propertyName, $component['required'] ?? [], true);
 
                     if($idx !== false) {
                         $component['required'][$idx] = $newName;
