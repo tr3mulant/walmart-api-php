@@ -170,10 +170,7 @@ class {{classname}} extends BaseApi
                         $contentType = $response->getHeader('Content-Type')[0] ?? '';
                         if ('{{{dataType}}}' !== 'string') {
                             if ($contentType === 'application/xml') {
-                                $xml = simplexml_load_string($content, 'SimpleXMLElement', LIBXML_NOCDATA);
-                                $ns = $xml->getDocNamespaces(true);
-                                $prefix = array_key_first($ns);
-                                $content = json_encode($xml->children($ns[$prefix]));
+                                $content = $this->jsonEncodeXML($content);
                             }
                             $content = json_decode($content);
                         }
@@ -194,10 +191,7 @@ class {{classname}} extends BaseApi
                 $contentType = $response->getHeader('Content-Type')[0] ?? '';
                 if ($returnType !== 'string') {
                     if ($contentType === 'application/xml') {
-                        $xml = simplexml_load_string($content, 'SimpleXMLElement', LIBXML_NOCDATA);
-                        $ns = $xml->getDocNamespaces(true);
-                        $prefix = array_key_first($ns);
-                        $content = json_encode($xml->children($ns[$prefix]));
+                        $content = $this->jsonEncodeXML($content);
                     }
                     $content = json_decode($content);
                 }
