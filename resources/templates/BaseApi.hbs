@@ -124,4 +124,54 @@ class BaseApi
             file_put_contents($this->config->getDebugFile(), '[' . date('Y-m-d H:i:s') . ']: ' . print_r($data, true) . "\n", FILE_APPEND);
         }
     }
+
+    /**
+     * Convert XML to a json encoded string.
+     *
+     * @param string $content
+     * @return false|string
+     */
+    protected function jsonEncodeXML(string $content): false|string
+    {
+        $newContent = $this->stripNamespacesXML($content);
+
+        if ($newContent !== false) {
+            $xml = simplexml_load_string(
+                $newContent,
+                'SimpleXMLElement',
+                LIBXML_NOCDATA
+            );
+    
+            return json_encode($xml);
+        }
+
+        return $newContent;
+    }
+
+    /**
+     * Remove namespaces from Walmart XML for easy json encoding.
+     * This is not a good final solution as attributes and entire nodes could
+     * be lost in very complex xml.
+     *
+     * @param string $content
+     * @return false|string
+     */
+    protected function stripNamespacesXML(string $content): false|string
+    {
+        $xml = simplexml_load_string(
+            $content,
+            'SimpleXMLElement',
+            LIBXML_NOCDATA
+        );
+
+        $dom = new \DOMDocument();
+
+        $dom->loadXML($content);
+
+        foreach ($xml->getDocNamespaces(true) as $prefix => $namespace) {
+            $dom->documentElement->removeAttributeNS($namespace, $prefix);
+        }
+
+        return $dom->saveXML();
+    }
 }
