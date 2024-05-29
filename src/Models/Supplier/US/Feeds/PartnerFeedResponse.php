@@ -50,7 +50,6 @@ class PartnerFeedResponse extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'errors' => '\Walmart\Models\Supplier\US\Feeds\GatewayError[]',
         'feedId' => 'string',
         'feedStatus' => 'string',
         'ingestionErrors' => '\Walmart\Models\Supplier\US\Feeds\IngestionErrors',
@@ -60,7 +59,8 @@ class PartnerFeedResponse extends BaseModel
         'itemsProcessing' => 'int',
         'offset' => 'int',
         'limit' => 'int',
-        'itemDetails' => '\Walmart\Models\Supplier\US\Feeds\ItemDetails'
+        'itemDetails' => '\Walmart\Models\Supplier\US\Feeds\ItemDetails',
+        'error' => '\Walmart\Models\Supplier\US\Feeds\GatewayError[]'
     ];
 
     /**
@@ -71,7 +71,6 @@ class PartnerFeedResponse extends BaseModel
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'errors' => null,
         'feedId' => null,
         'feedStatus' => null,
         'ingestionErrors' => null,
@@ -81,7 +80,8 @@ class PartnerFeedResponse extends BaseModel
         'itemsProcessing' => 'int32',
         'offset' => 'int32',
         'limit' => 'int32',
-        'itemDetails' => null
+        'itemDetails' => null,
+        'error' => null
     ];
 
     /**
@@ -90,7 +90,6 @@ class PartnerFeedResponse extends BaseModel
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'errors' => false,
         'feedId' => false,
         'feedStatus' => false,
         'ingestionErrors' => false,
@@ -100,7 +99,8 @@ class PartnerFeedResponse extends BaseModel
         'itemsProcessing' => false,
         'offset' => false,
         'limit' => false,
-        'itemDetails' => false
+        'itemDetails' => false,
+        'error' => false
     ];
 
     /**
@@ -110,7 +110,6 @@ class PartnerFeedResponse extends BaseModel
      * @var string[]
      */
     protected static array $attributeMap = [
-        'errors' => 'errors',
         'feedId' => 'feedId',
         'feedStatus' => 'feedStatus',
         'ingestionErrors' => 'ingestionErrors',
@@ -120,7 +119,8 @@ class PartnerFeedResponse extends BaseModel
         'itemsProcessing' => 'itemsProcessing',
         'offset' => 'offset',
         'limit' => 'limit',
-        'itemDetails' => 'itemDetails'
+        'itemDetails' => 'itemDetails',
+        'error' => 'error'
     ];
 
     /**
@@ -129,7 +129,6 @@ class PartnerFeedResponse extends BaseModel
      * @var string[]
      */
     protected static array $setters = [
-        'errors' => 'setErrors',
         'feedId' => 'setFeedId',
         'feedStatus' => 'setFeedStatus',
         'ingestionErrors' => 'setIngestionErrors',
@@ -139,7 +138,8 @@ class PartnerFeedResponse extends BaseModel
         'itemsProcessing' => 'setItemsProcessing',
         'offset' => 'setOffset',
         'limit' => 'setLimit',
-        'itemDetails' => 'setItemDetails'
+        'itemDetails' => 'setItemDetails',
+        'error' => 'setError'
     ];
 
     /**
@@ -148,7 +148,6 @@ class PartnerFeedResponse extends BaseModel
      * @var string[]
      */
     protected static array $getters = [
-        'errors' => 'getErrors',
         'feedId' => 'getFeedId',
         'feedStatus' => 'getFeedStatus',
         'ingestionErrors' => 'getIngestionErrors',
@@ -158,7 +157,8 @@ class PartnerFeedResponse extends BaseModel
         'itemsProcessing' => 'getItemsProcessing',
         'offset' => 'getOffset',
         'limit' => 'getLimit',
-        'itemDetails' => 'getItemDetails'
+        'itemDetails' => 'getItemDetails',
+        'error' => 'getError'
     ];
 
 
@@ -193,7 +193,6 @@ class PartnerFeedResponse extends BaseModel
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('errors', $data ?? [], null);
         $this->setIfExists('feedId', $data ?? [], null);
         $this->setIfExists('feedStatus', $data ?? [], null);
         $this->setIfExists('ingestionErrors', $data ?? [], null);
@@ -204,6 +203,7 @@ class PartnerFeedResponse extends BaseModel
         $this->setIfExists('offset', $data ?? [], null);
         $this->setIfExists('limit', $data ?? [], null);
         $this->setIfExists('itemDetails', $data ?? [], null);
+        $this->setIfExists('error', $data ?? [], null);
     }
 
     /**
@@ -226,35 +226,6 @@ class PartnerFeedResponse extends BaseModel
 
 
         return $invalidProperties;
-    }
-
-    /**
-     * Gets errors
-     *
-     * @return \Walmart\Models\Supplier\US\Feeds\GatewayError[]|null
-    
-     */
-    public function getErrors()
-    {
-        return $this->container['errors'];
-    }
-
-    /**
-     * Sets errors
-     *
-     * @param \Walmart\Models\Supplier\US\Feeds\GatewayError[]|null $errors errors
-     *
-     * @return self
-    
-     */
-    public function setErrors($errors)
-    {
-        if (is_null($errors)) {
-            throw new \InvalidArgumentException('non-nullable errors cannot be null');
-        }
-
-        $this->container['errors'] = $errors;
-        return $this;
     }
 
     /**
@@ -554,6 +525,35 @@ class PartnerFeedResponse extends BaseModel
         }
 
         $this->container['itemDetails'] = $itemDetails;
+        return $this;
+    }
+
+    /**
+     * Gets error
+     *
+     * @return \Walmart\Models\Supplier\US\Feeds\GatewayError[]|null
+    
+     */
+    public function getError()
+    {
+        return $this->container['error'];
+    }
+
+    /**
+     * Sets error
+     *
+     * @param \Walmart\Models\Supplier\US\Feeds\GatewayError[]|null $error error
+     *
+     * @return self
+    
+     */
+    public function setError($error)
+    {
+        if (is_null($error)) {
+            throw new \InvalidArgumentException('non-nullable error cannot be null');
+        }
+
+        $this->container['error'] = $error;
         return $this;
     }
 }

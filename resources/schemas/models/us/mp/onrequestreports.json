@@ -3,7 +3,7 @@
     "info": {
         "title": "On-request Report Management",
         "description": "The On-request Reports API allows you to request reports immediately about your items for faster retrieval. You can request the report, check status on the report availability, and then download the report URL when report is ready. You can also get a list of all reports requested.",
-        "version": "0.6.3"
+        "version": "0.7.0"
     },
     "servers": [
         {
@@ -103,7 +103,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/RequestsStatusResponse"
+                                    "$ref": "#\/components\/schemas\/RequestsStatusResponse",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "page": 1,
@@ -262,7 +263,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GenerateReportResponse"
+                                    "$ref": "#\/components\/schemas\/GenerateReportResponse",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "requestId": "98884f2c-46c7-48c6-8e19-0946ff371442",
@@ -343,7 +345,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/RequestStatusResponse"
+                                    "$ref": "#\/components\/schemas\/RequestStatusResponse",
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -385,7 +388,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/DownloadReportResponse"
+                                    "$ref": "#\/components\/schemas\/DownloadReportResponse",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "requestSubmissionDate": "2020-09-24T05:36:24",

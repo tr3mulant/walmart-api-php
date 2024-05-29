@@ -50,9 +50,9 @@ class ItemRetireResponseV2 extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'errors' => '\Walmart\Models\MP\CA\Items\GatewayError[]',
         'sku' => 'string',
-        'message' => 'string'
+        'message' => 'string',
+        'error' => '\Walmart\Models\MP\CA\Items\GatewayError[]'
     ];
 
     /**
@@ -63,9 +63,9 @@ class ItemRetireResponseV2 extends BaseModel
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'errors' => null,
         'sku' => null,
-        'message' => null
+        'message' => null,
+        'error' => null
     ];
 
     /**
@@ -74,9 +74,9 @@ class ItemRetireResponseV2 extends BaseModel
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'errors' => false,
         'sku' => false,
-        'message' => false
+        'message' => false,
+        'error' => false
     ];
 
     /**
@@ -86,9 +86,9 @@ class ItemRetireResponseV2 extends BaseModel
      * @var string[]
      */
     protected static array $attributeMap = [
-        'errors' => 'errors',
         'sku' => 'sku',
-        'message' => 'message'
+        'message' => 'message',
+        'error' => 'error'
     ];
 
     /**
@@ -97,9 +97,9 @@ class ItemRetireResponseV2 extends BaseModel
      * @var string[]
      */
     protected static array $setters = [
-        'errors' => 'setErrors',
         'sku' => 'setSku',
-        'message' => 'setMessage'
+        'message' => 'setMessage',
+        'error' => 'setError'
     ];
 
     /**
@@ -108,9 +108,9 @@ class ItemRetireResponseV2 extends BaseModel
      * @var string[]
      */
     protected static array $getters = [
-        'errors' => 'getErrors',
         'sku' => 'getSku',
-        'message' => 'getMessage'
+        'message' => 'getMessage',
+        'error' => 'getError'
     ];
 
     /**
@@ -121,9 +121,9 @@ class ItemRetireResponseV2 extends BaseModel
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('errors', $data ?? [], null);
         $this->setIfExists('sku', $data ?? [], null);
         $this->setIfExists('message', $data ?? [], null);
+        $this->setIfExists('error', $data ?? [], null);
     }
 
     /**
@@ -140,35 +140,6 @@ class ItemRetireResponseV2 extends BaseModel
         }
 
         return $invalidProperties;
-    }
-
-    /**
-     * Gets errors
-     *
-     * @return \Walmart\Models\MP\CA\Items\GatewayError[]|null
-    
-     */
-    public function getErrors()
-    {
-        return $this->container['errors'];
-    }
-
-    /**
-     * Sets errors
-     *
-     * @param \Walmart\Models\MP\CA\Items\GatewayError[]|null $errors errors
-     *
-     * @return self
-    
-     */
-    public function setErrors($errors)
-    {
-        if (is_null($errors)) {
-            throw new \InvalidArgumentException('non-nullable errors cannot be null');
-        }
-
-        $this->container['errors'] = $errors;
-        return $this;
     }
 
     /**
@@ -226,6 +197,35 @@ class ItemRetireResponseV2 extends BaseModel
         }
 
         $this->container['message'] = $message;
+        return $this;
+    }
+
+    /**
+     * Gets error
+     *
+     * @return \Walmart\Models\MP\CA\Items\GatewayError[]|null
+    
+     */
+    public function getError()
+    {
+        return $this->container['error'];
+    }
+
+    /**
+     * Sets error
+     *
+     * @param \Walmart\Models\MP\CA\Items\GatewayError[]|null $error error
+     *
+     * @return self
+    
+     */
+    public function setError($error)
+    {
+        if (is_null($error)) {
+            throw new \InvalidArgumentException('non-nullable error cannot be null');
+        }
+
+        $this->container['error'] = $error;
         return $this;
     }
 }

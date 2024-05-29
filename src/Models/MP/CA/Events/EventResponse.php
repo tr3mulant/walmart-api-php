@@ -53,12 +53,12 @@ class EventResponse extends BaseModel
         'id' => 'string',
         'title' => 'string',
         'type' => 'string',
-        'submissionStartDate' => '\DateTime',
         'submissionEndDate' => '\DateTime',
         'eventStartDate' => '\DateTime',
         'eventEndDate' => '\DateTime',
         'description' => 'string',
-        'lastUpdatedDate' => '\DateTime'
+        'lastUpdatedDate' => '\DateTime',
+        'dateTime' => '\DateTime'
     ];
 
     /**
@@ -72,12 +72,12 @@ class EventResponse extends BaseModel
         'id' => null,
         'title' => null,
         'type' => null,
-        'submissionStartDate' => 'date-time',
         'submissionEndDate' => 'date-time',
         'eventStartDate' => 'date-time',
         'eventEndDate' => 'date-time',
         'description' => null,
-        'lastUpdatedDate' => 'date-time'
+        'lastUpdatedDate' => 'date-time',
+        'dateTime' => 'date-time'
     ];
 
     /**
@@ -89,12 +89,12 @@ class EventResponse extends BaseModel
         'id' => false,
         'title' => false,
         'type' => false,
-        'submissionStartDate' => false,
         'submissionEndDate' => false,
         'eventStartDate' => false,
         'eventEndDate' => false,
         'description' => false,
-        'lastUpdatedDate' => false
+        'lastUpdatedDate' => false,
+        'dateTime' => false
     ];
 
     /**
@@ -107,12 +107,12 @@ class EventResponse extends BaseModel
         'id' => 'id',
         'title' => 'title',
         'type' => 'type',
-        'submissionStartDate' => 'submissionStartDate',
         'submissionEndDate' => 'submissionEndDate',
         'eventStartDate' => 'eventStartDate',
         'eventEndDate' => 'eventEndDate',
         'description' => 'description',
-        'lastUpdatedDate' => 'lastUpdatedDate'
+        'lastUpdatedDate' => 'lastUpdatedDate',
+        'dateTime' => 'dateTime'
     ];
 
     /**
@@ -124,12 +124,12 @@ class EventResponse extends BaseModel
         'id' => 'setId',
         'title' => 'setTitle',
         'type' => 'setType',
-        'submissionStartDate' => 'setSubmissionStartDate',
         'submissionEndDate' => 'setSubmissionEndDate',
         'eventStartDate' => 'setEventStartDate',
         'eventEndDate' => 'setEventEndDate',
         'description' => 'setDescription',
-        'lastUpdatedDate' => 'setLastUpdatedDate'
+        'lastUpdatedDate' => 'setLastUpdatedDate',
+        'dateTime' => 'setDateTime'
     ];
 
     /**
@@ -141,12 +141,12 @@ class EventResponse extends BaseModel
         'id' => 'getId',
         'title' => 'getTitle',
         'type' => 'getType',
-        'submissionStartDate' => 'getSubmissionStartDate',
         'submissionEndDate' => 'getSubmissionEndDate',
         'eventStartDate' => 'getEventStartDate',
         'eventEndDate' => 'getEventEndDate',
         'description' => 'getDescription',
-        'lastUpdatedDate' => 'getLastUpdatedDate'
+        'lastUpdatedDate' => 'getLastUpdatedDate',
+        'dateTime' => 'getDateTime'
     ];
 
 
@@ -184,12 +184,12 @@ class EventResponse extends BaseModel
         $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('title', $data ?? [], null);
         $this->setIfExists('type', $data ?? [], null);
-        $this->setIfExists('submissionStartDate', $data ?? [], null);
         $this->setIfExists('submissionEndDate', $data ?? [], null);
         $this->setIfExists('eventStartDate', $data ?? [], null);
         $this->setIfExists('eventEndDate', $data ?? [], null);
         $this->setIfExists('description', $data ?? [], null);
         $this->setIfExists('lastUpdatedDate', $data ?? [], null);
+        $this->setIfExists('dateTime', $data ?? [], null);
     }
 
     /**
@@ -308,35 +308,6 @@ class EventResponse extends BaseModel
         }
 
         $this->container['type'] = $type;
-        return $this;
-    }
-
-    /**
-     * Gets submissionStartDate
-     *
-     * @return \DateTime|null
-    
-     */
-    public function getSubmissionStartDate()
-    {
-        return $this->container['submissionStartDate'];
-    }
-
-    /**
-     * Sets submissionStartDate
-     *
-     * @param \DateTime|null $submissionStartDate Start date from when a seller can submit their item details for participating in the event
-     *
-     * @return self
-    
-     */
-    public function setSubmissionStartDate($submissionStartDate)
-    {
-        if (is_null($submissionStartDate)) {
-            throw new \InvalidArgumentException('non-nullable submissionStartDate cannot be null');
-        }
-
-        $this->container['submissionStartDate'] = $submissionStartDate;
         return $this;
     }
 
@@ -482,6 +453,35 @@ class EventResponse extends BaseModel
         }
 
         $this->container['lastUpdatedDate'] = $lastUpdatedDate;
+        return $this;
+    }
+
+    /**
+     * Gets dateTime
+     *
+     * @return \DateTime|null
+    
+     */
+    public function getDateTime()
+    {
+        return $this->container['dateTime'];
+    }
+
+    /**
+     * Sets dateTime
+     *
+     * @param \DateTime|null $dateTime Start date from when a seller can submit their item details for participating in the event
+     *
+     * @return self
+    
+     */
+    public function setDateTime($dateTime)
+    {
+        if (is_null($dateTime)) {
+            throw new \InvalidArgumentException('non-nullable dateTime cannot be null');
+        }
+
+        $this->container['dateTime'] = $dateTime;
         return $this;
     }
 }

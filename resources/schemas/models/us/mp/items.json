@@ -3,7 +3,7 @@
     "info": {
         "title": "Item Management",
         "description": "The Item Management APIs enable you to set up and manage items on Walmart.com. Once you have completed Registration and have access to your Consumer ID and Private Key, you can get started with the integration process",
-        "version": "0.6.3"
+        "version": "0.7.0"
     },
     "servers": [
         {
@@ -83,7 +83,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ItemCatalogResponses"
+                                    "$ref": "#\/components\/schemas\/ItemCatalogResponses",
+                                    "x-expose-headers": true
                                 },
                                 "examples": {
                                     "Search Items": {
@@ -374,7 +375,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ItemsAssociationsResponseDTO"
+                                    "$ref": "#\/components\/schemas\/ItemsAssociationsResponseDTO",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "items": [
@@ -974,7 +976,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/FeedId"
+                                    "$ref": "#\/components\/schemas\/FeedId",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "feedId": "F129C19240844B97A3C6AD8F1A2C4997@AU8BAQA"
@@ -1076,7 +1079,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ItemResponses"
+                                    "$ref": "#\/components\/schemas\/ItemResponses",
+                                    "x-expose-headers": true
                                 },
                                 "examples": {
                                     "Get All Items": {
@@ -1660,7 +1664,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ItemResponses"
+                                    "$ref": "#\/components\/schemas\/ItemResponses",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "ItemResponse": [
@@ -1744,7 +1749,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ItemSearch"
+                                    "$ref": "#\/components\/schemas\/ItemSearch",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "items": [
@@ -1877,7 +1883,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/TaxonomyResponseDTO"
+                                    "$ref": "#\/components\/schemas\/TaxonomyResponseDTO",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "status": "SUCCESS",
@@ -1950,7 +1957,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/VariantCountResponses"
+                                    "$ref": "#\/components\/schemas\/VariantCountResponses",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "status": 200,
@@ -2077,7 +2085,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ItemRetireResponse"
+                                    "$ref": "#\/components\/schemas\/ItemRetireResponse",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "sku": "97964_KFTest",
@@ -2943,15 +2952,6 @@
                 ],
                 "type": "object",
                 "properties": {
-                    "errors": {
-                        "type": "array",
-                        "xml": {
-                            "name": "error"
-                        },
-                        "items": {
-                            "$ref": "#\/components\/schemas\/GatewayError"
-                        }
-                    },
                     "ItemResponse": {
                         "type": "array",
                         "description": "Items included in the response list",
@@ -2970,6 +2970,15 @@
                     "nextCursor": {
                         "type": "string",
                         "description": "Used for pagination to fetch the next set of items"
+                    },
+                    "error": {
+                        "type": "array",
+                        "xml": {
+                            "name": "error"
+                        },
+                        "items": {
+                            "$ref": "#\/components\/schemas\/GatewayError"
+                        }
                     }
                 },
                 "xml": {
@@ -3201,7 +3210,7 @@
             "NameValueAttributes": {
                 "type": "object",
                 "properties": {
-                    "nameValueAttribute": {
+                    "NameValueAttribute": {
                         "type": "array",
                         "xml": {
                             "name": "NameValueAttribute"

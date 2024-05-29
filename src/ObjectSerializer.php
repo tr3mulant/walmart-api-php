@@ -402,7 +402,7 @@ class ObjectSerializer
             return null;
         }
 
-        if (strcasecmp(substr($class, -2), '[]') === 0) {
+        if (self::isArrayableType($class)) {
             $data = is_string($data) ? json_decode($data) : $data;
 
             if (!is_array($data)) {
@@ -535,6 +535,10 @@ class ObjectSerializer
 
                 if (isset($data->{$instance::attributeMap()[$property]})) {
                     $propertyValue = $data->{$instance::attributeMap()[$property]};
+                    //std object now and it should be an array to deal with xml responses
+                    if (self::isArrayableType($type) && !is_string($propertyValue) && !is_array($propertyValue)) {
+                        $propertyValue = [$propertyValue];
+                    }
                     $instance->$propertySetter(self::deserialize($propertyValue, $type, null));
                 }
             }
@@ -565,5 +569,16 @@ class ObjectSerializer
         int $encoding_type = \PHP_QUERY_RFC3986
     ): string {
         return \GuzzleHttp\Psr7\Query::build($data, $encoding_type);
+    }
+
+    /**
+     * Helper to test if the type is arrayble.
+     *
+     * @param string $class
+     * @return bool
+     */
+    private static function isArrayableType(string $class): bool
+    {
+        return strcasecmp(substr($class, -2), '[]') === 0;
     }
 }

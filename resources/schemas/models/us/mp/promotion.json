@@ -3,7 +3,7 @@
     "info": {
         "title": "Promotion Management",
         "description": "Sellers can set regular or promotional prices for their items. Setting the Promotional prices is an option to create unique pricing for events such as clearance sales or to call out a comparison price",
-        "version": "0.6.3"
+        "version": "0.7.0"
     },
     "servers": [
         {
@@ -83,7 +83,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ItemPriceResponse"
+                                    "$ref": "#\/components\/schemas\/ItemPriceResponse",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "ItemPriceResponse": {
@@ -150,7 +151,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/FeedId"
+                                    "$ref": "#\/components\/schemas\/FeedId",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "feedId": "609B1E4C0B3E48989690263DEAC85C63@AVUBAQA"
@@ -191,7 +193,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/PromotionalPriceResponse"
+                                    "$ref": "#\/components\/schemas\/PromotionalPriceResponse",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "status": "OK",
@@ -342,15 +345,6 @@
             "ItemPriceResponse": {
                 "type": "object",
                 "properties": {
-                    "errors": {
-                        "type": "array",
-                        "xml": {
-                            "name": "error"
-                        },
-                        "items": {
-                            "$ref": "#\/components\/schemas\/GatewayError"
-                        }
-                    },
                     "statusCode": {
                         "type": "integer",
                         "format": "int32"
@@ -374,6 +368,15 @@
                         "description": "A message of acknowledgement for a price update",
                         "xml": {
                             "namespace": "http:\/\/walmart.com\/"
+                        }
+                    },
+                    "error": {
+                        "type": "array",
+                        "xml": {
+                            "name": "error"
+                        },
+                        "items": {
+                            "$ref": "#\/components\/schemas\/GatewayError"
                         }
                     }
                 },

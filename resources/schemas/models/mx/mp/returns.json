@@ -3,7 +3,7 @@
     "info": {
         "title": "Returns Management",
         "description": "Returns can be initiated from Walmart.com, even for items purchased from marketplace sellers (Except for HAZMAT or FREIGHT items).",
-        "version": "0.6.3"
+        "version": "0.7.0"
     },
     "servers": [
         {
@@ -90,7 +90,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorResponse"
+                                    "$ref": "#\/components\/schemas\/ErrorResponse",
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -100,7 +101,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorResponse"
+                                    "$ref": "#\/components\/schemas\/ErrorResponse",
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -206,7 +208,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetReturnOrdersResponse"
+                                    "$ref": "#\/components\/schemas\/GetReturnOrdersResponse",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "meta": {
@@ -686,7 +689,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorResponse"
+                                    "$ref": "#\/components\/schemas\/ErrorResponse",
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -696,7 +700,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorResponse"
+                                    "$ref": "#\/components\/schemas\/ErrorResponse",
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -801,7 +806,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetReturnOrdersResponseWithCursor"
+                                    "$ref": "#\/components\/schemas\/GetReturnOrdersResponseWithCursor",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "meta": {
@@ -1779,7 +1785,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorResponse"
+                                    "$ref": "#\/components\/schemas\/ErrorResponse",
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -1789,7 +1796,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorResponse"
+                                    "$ref": "#\/components\/schemas\/ErrorResponse",
+                                    "x-expose-headers": true
                                 }
                             }
                         }

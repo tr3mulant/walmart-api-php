@@ -3,7 +3,7 @@
     "info": {
         "title": "Feed Management",
         "description": "Feeds are constructed to handle bulk functions. A feed consists of an HTTP request with an attached file. The attached file contains the XML representing the objects that need to be created or updated.",
-        "version": "0.6.3"
+        "version": "0.7.0"
     },
     "servers": [
         {
@@ -66,7 +66,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/FeedRecordResponse"
+                                    "$ref": "#\/components\/schemas\/FeedRecordResponse",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "totalResults": 163,
@@ -182,7 +183,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/PartnerFeedResponse"
+                                    "$ref": "#\/components\/schemas\/PartnerFeedResponse",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "feedId": "2601163173CF4F8290898F1F7256793F@AQMBAQA",
@@ -322,15 +324,6 @@
             "FeedRecordResponse": {
                 "type": "object",
                 "properties": {
-                    "errors": {
-                        "type": "array",
-                        "xml": {
-                            "name": "error"
-                        },
-                        "items": {
-                            "$ref": "#\/components\/schemas\/GatewayError"
-                        }
-                    },
                     "totalResults": {
                         "type": "integer",
                         "description": "Total number of feeds returned",
@@ -348,6 +341,15 @@
                     },
                     "results": {
                         "$ref": "#\/components\/schemas\/ResultRecord"
+                    },
+                    "error": {
+                        "type": "array",
+                        "xml": {
+                            "name": "error"
+                        },
+                        "items": {
+                            "$ref": "#\/components\/schemas\/GatewayError"
+                        }
                     }
                 },
                 "xml": {
@@ -493,15 +495,6 @@
             "PartnerFeedResponse": {
                 "type": "object",
                 "properties": {
-                    "errors": {
-                        "type": "array",
-                        "xml": {
-                            "name": "error"
-                        },
-                        "items": {
-                            "$ref": "#\/components\/schemas\/GatewayError"
-                        }
-                    },
                     "feedId": {
                         "type": "string",
                         "description": "A unique ID used for tracking the Feed File"
@@ -551,6 +544,15 @@
                     },
                     "itemDetails": {
                         "$ref": "#\/components\/schemas\/ItemDetails"
+                    },
+                    "error": {
+                        "type": "array",
+                        "xml": {
+                            "name": "error"
+                        },
+                        "items": {
+                            "$ref": "#\/components\/schemas\/GatewayError"
+                        }
                     }
                 },
                 "xml": {

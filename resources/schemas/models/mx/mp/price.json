@@ -3,7 +3,7 @@
     "info": {
         "title": "Price Management",
         "description": "The price is a fundamental building block for your listing on Walmart.com. You can use the price management APIs to set up and manage the price for a given item",
-        "version": "0.6.3"
+        "version": "0.7.0"
     },
     "servers": [
         {
@@ -47,7 +47,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/PartnerPriceResponse"
+                                    "$ref": "#\/components\/schemas\/PartnerPriceResponse",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "ItemPriceResponse": {
@@ -118,7 +119,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/FeedId"
+                                    "$ref": "#\/components\/schemas\/FeedId",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "feedId": "970302799B194D309B4DBA5471DCEF19@AQYBCgA"
@@ -233,15 +235,6 @@
             "PartnerPriceResponse": {
                 "type": "object",
                 "properties": {
-                    "errors": {
-                        "type": "array",
-                        "xml": {
-                            "name": "error"
-                        },
-                        "items": {
-                            "$ref": "#\/components\/schemas\/GatewayError"
-                        }
-                    },
                     "statusCode": {
                         "type": "integer",
                         "format": "int32"
@@ -265,6 +258,15 @@
                         "description": "A message of acknowledgement for a price update",
                         "xml": {
                             "namespace": "http:\/\/walmart.com\/"
+                        }
+                    },
+                    "error": {
+                        "type": "array",
+                        "xml": {
+                            "name": "error"
+                        },
+                        "items": {
+                            "$ref": "#\/components\/schemas\/GatewayError"
                         }
                     }
                 },

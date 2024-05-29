@@ -3,7 +3,7 @@
     "info": {
         "title": "International Shipping",
         "description": "The International Shipment APIs which allows US sellers to ship items to Mexico internationally, via Ship With Walmart service.",
-        "version": "0.6.3"
+        "version": "0.7.0"
     },
     "servers": [
         {
@@ -80,7 +80,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CommonResponseLabelGenerationResponseMx"
+                                    "$ref": "#\/components\/schemas\/CommonResponseLabelGenerationResponseMx",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "data": {
@@ -142,7 +143,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CommonResponseListLabelGenerationResponseMx"
+                                    "$ref": "#\/components\/schemas\/CommonResponseListLabelGenerationResponseMx",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "data": [
@@ -189,7 +191,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CarrierCommonResponseListCarrierResponse"
+                                    "$ref": "#\/components\/schemas\/CarrierCommonResponseListCarrierResponse",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "carriers": [
@@ -294,7 +297,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CommonResponseLabelGenerationResponseMx"
+                                    "$ref": "#\/components\/schemas\/CommonResponseLabelGenerationResponseMx",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "data": "true"
@@ -336,7 +340,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CommonResponseListCarrierPackageResponse"
+                                    "$ref": "#\/components\/schemas\/CommonResponseListCarrierPackageResponse",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "data": [

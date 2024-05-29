@@ -3,7 +3,7 @@
     "info": {
         "title": "Event Management",
         "description": "The Event Management APIs are built to enable sellers to participate in the Promotional Events hosted on Seller Center Canada Ecommerce Website. These events are set up by our Business Teams and sellers can participate voluntarily to promote their SKUs at a promotional price for certain time period.",
-        "version": "0.6.3"
+        "version": "0.7.0"
     },
     "servers": [
         {
@@ -54,7 +54,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/UploadResponse"
+                                    "$ref": "#\/components\/schemas\/UploadResponse",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "response": "Promo Items Uploaded Successfully"
@@ -97,7 +98,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/UploadResponse"
+                                    "$ref": "#\/components\/schemas\/UploadResponse",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "response": "Feed Uploaded Successfully, feed ID: 6D4B0EDB4A3B4DD2B422B098F8ACFC4E@AREBAwA"
@@ -163,7 +165,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ItemCountResponse"
+                                    "$ref": "#\/components\/schemas\/ItemCountResponse",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "eventId": "a7f561e2-5f5f-450f-8c58-5b022f680ec0",
@@ -214,7 +217,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/PromoItemResponse"
+                                    "$ref": "#\/components\/schemas\/PromoItemResponse",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "eventId": "718012a5-a4a6-40d8-a8be-4b8e6b3ac08b",
@@ -308,7 +312,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/EventResponse"
+                                    "$ref": "#\/components\/schemas\/EventResponse",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "lastupdateddate": "",
@@ -369,7 +374,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/PromoItemResponse"
+                                    "$ref": "#\/components\/schemas\/PromoItemResponse",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "eventId": "e44631ea-ccc5-44b6-99c0-d0364607be2d",
@@ -593,14 +599,6 @@
                             "Seasonal"
                         ]
                     },
-                    "submissionStartDate": {
-                        "type": "string",
-                        "description": "Start date from when a seller can submit their item details for participating in the event",
-                        "format": "date-time",
-                        "xml": {
-                            "name": "dateTime"
-                        }
-                    },
                     "submissionEndDate": {
                         "type": "string",
                         "description": "Last date for sellers to submit their items",
@@ -624,6 +622,14 @@
                         "type": "string",
                         "description": "Last Updated date",
                         "format": "date-time"
+                    },
+                    "dateTime": {
+                        "type": "string",
+                        "description": "Start date from when a seller can submit their item details for participating in the event",
+                        "format": "date-time",
+                        "xml": {
+                            "name": "dateTime"
+                        }
                     }
                 },
                 "xml": {

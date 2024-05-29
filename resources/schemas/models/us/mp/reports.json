@@ -3,7 +3,7 @@
     "info": {
         "title": "Pregenerated Reports retiring on June 30, 2022 :",
         "description": "Please transition ASAP to using onRequest Reports (https:\/\/developer.walmart.com\/doc\/us\/us-mp\/us-mp-onrequestreports\/). On July 29th, all PreGenerated reports other than recon report will be retired and only available onRequest. \nThe Pregenerated Reports API allows you to obtain any pregenerated report that you need, including: item, item performance, buy box, CAP, promotions, reconciliation, return item override, shipping program and shipping configuration.",
-        "version": "0.6.3"
+        "version": "0.7.0"
     },
     "servers": [
         {
@@ -137,7 +137,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ReconReportDateResponse"
+                                    "$ref": "#\/components\/schemas\/ReconReportDateResponse",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "availableApReportDates": [
@@ -183,7 +184,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ReconReportDateResponse"
+                                    "$ref": "#\/components\/schemas\/ReconReportDateResponse",
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -215,7 +217,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/PartnerProgramStatementRes"
+                                    "$ref": "#\/components\/schemas\/PartnerProgramStatementRes",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "statusCode": 200,
@@ -322,7 +325,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/PartnerProgramPerformanceRes"
+                                    "$ref": "#\/components\/schemas\/PartnerProgramPerformanceRes",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "statusCode": 200,

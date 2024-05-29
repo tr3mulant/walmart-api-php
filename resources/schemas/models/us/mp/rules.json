@@ -3,7 +3,7 @@
     "info": {
         "title": "Rules Management",
         "description": "Rules Management",
-        "version": "0.6.3"
+        "version": "0.7.0"
     },
     "servers": [
         {
@@ -62,7 +62,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/InactivateRuleResponse"
+                                    "$ref": "#\/components\/schemas\/InactivateRuleResponse",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "message": "Rules are inactivated: [39, 44]",
@@ -94,7 +95,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetAllExceptionsResponse"
+                                    "$ref": "#\/components\/schemas\/GetAllExceptionsResponse",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "skuIds": [
@@ -153,7 +155,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/DeleteExceptionResponse"
+                                    "$ref": "#\/components\/schemas\/DeleteExceptionResponse",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "feedId": "5ED712C698FD43B999EC5EEFD5C63655@ATgBAQA",
@@ -209,7 +212,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateOverrideExceptionResponse"
+                                    "$ref": "#\/components\/schemas\/CreateOverrideExceptionResponse",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "feedId": "5ED712C698FD43B999EC5EEFD5C63655@ATgBAQA",
@@ -261,7 +265,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ChangeAssortmentResponse"
+                                    "$ref": "#\/components\/schemas\/ChangeAssortmentResponse",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "status": "OK",
@@ -321,7 +326,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/InactivateRuleResponse"
+                                    "$ref": "#\/components\/schemas\/InactivateRuleResponse",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "message": "Rules are activated: [39, 44]",
@@ -390,7 +396,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateRuleResponse"
+                                    "$ref": "#\/components\/schemas\/CreateRuleResponse",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "rules": [
@@ -457,7 +464,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetAllRulesResponse"
+                                    "$ref": "#\/components\/schemas\/GetAllRulesResponse",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "rules": [
@@ -604,7 +612,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateRuleResponse"
+                                    "$ref": "#\/components\/schemas\/CreateRuleResponse",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "rules": [
@@ -702,7 +711,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CreateRuleResponse"
+                                    "$ref": "#\/components\/schemas\/CreateRuleResponse",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "rules": [
@@ -773,7 +783,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetAllRulesResponse"
+                                    "$ref": "#\/components\/schemas\/GetAllRulesResponse",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "rules": [
@@ -862,7 +873,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetSimulationCountResponse"
+                                    "$ref": "#\/components\/schemas\/GetSimulationCountResponse",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "ruleId": "677",
@@ -942,7 +954,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetAllSubCategoriesResponse"
+                                    "$ref": "#\/components\/schemas\/GetAllSubCategoriesResponse",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "status": "SUCCESS",
@@ -1035,7 +1048,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetAllAreasResponse"
+                                    "$ref": "#\/components\/schemas\/GetAllAreasResponse",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "status": "OK",
@@ -1873,7 +1887,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/DeleteRuleResponse"
+                                    "$ref": "#\/components\/schemas\/DeleteRuleResponse",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "status": "SUCCESS",

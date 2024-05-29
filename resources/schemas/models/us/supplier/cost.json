@@ -3,7 +3,7 @@
     "info": {
         "title": "Cost Management",
         "description": "This API allows DSV to update cost for items in bulk.",
-        "version": "0.6.3"
+        "version": "0.7.0"
     },
     "servers": [
         {
@@ -49,7 +49,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/DsvCostUpdateResponse"
+                                    "$ref": "#\/components\/schemas\/DsvCostUpdateResponse",
+                                    "x-expose-headers": true
                                 }
                             }
                         }

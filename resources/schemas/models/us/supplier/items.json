@@ -3,7 +3,7 @@
     "info": {
         "title": "Item Management",
         "description": "The Item Management APIs enable you to set up and manage items on Walmart.com. Once you have completed Registration and have access to your Consumer ID and Private Key, you can get started with the integration process",
-        "version": "0.6.3"
+        "version": "0.7.0"
     },
     "servers": [
         {
@@ -62,7 +62,8 @@
                         "content": {
                             "application\/xml": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/FeedId"
+                                    "$ref": "#\/components\/schemas\/FeedId",
+                                    "x-expose-headers": true
                                 },
                                 "example": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<FeedAcknowledgement xmlns:ns2=\"http:\/\/walmart.com\/\">\n    <feedId>E9C04D1FFD99479FBC1341D56DD5F930@AQMB_wA<\/feedId>\n<\/FeedAcknowledgement>\n"
                             }
@@ -116,7 +117,8 @@
                         "content": {
                             "application\/xml": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/FeedId"
+                                    "$ref": "#\/components\/schemas\/FeedId",
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -167,7 +169,8 @@
                         "content": {
                             "application\/xml": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ItemResponses"
+                                    "$ref": "#\/components\/schemas\/ItemResponses",
+                                    "x-expose-headers": true
                                 },
                                 "example": "<ItemResponse xmlns:ns2=\"http:\/\/walmart.com\/\">\n    <ItemResponse>\n        <mart>WALMART_US<\/mart>\n        <sku>379third908<\/sku>\n        <gtin>00313159099947<\/gtin>\n        <productName>Carex Soft Grip Folding Cane - Black Walking Cane<\/productName>\n        <productType>Walking Canes<\/productType>\n        <price>\n            <currency>USD<\/currency>\n            <amount>13.27<\/amount>\n        <\/price>\n        <publishedStatus>IN_PROGRESS<\/publishedStatus>\n    <\/ItemResponse >\n    <ItemResponse >\n        <mart>WALMART_US<\/mart>\n        <sku>prodtest1571<\/sku>\n        <upc>889296686590<\/upc>\n        <gtin>00889296686590<\/gtin>\n        <productName>REFURBISHED HP 250 G3 15.6 Notebook, Intel 4th Gen i3, 4GB RAM, 500GB HDD, Win 8.1, M5G69UTABA<\/productName>\n        <productType>RAM Memory<\/productType>\n        <price>\n            <currency>USD<\/currency>\n            <amount>329.99<\/amount>\n        <\/price>\n        <publishedStatus>PUBLISHED<\/publishedStatus>\n    <\/ItemResponse>\n<\/ItemResponse>\n\n"
                             }
@@ -209,7 +212,8 @@
                         "content": {
                             "application\/xml": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ItemResponse"
+                                    "$ref": "#\/components\/schemas\/ItemResponse",
+                                    "x-expose-headers": true
                                 },
                                 "example": "<ItemResponse>\n    <mart>WALMART_US<\/mart>\n    <sku>prodtest1571<\/sku>\n    <upc>889296686590<\/upc>\n    <gtin>00889296686590<\/gtin>\n    <productName>REFURBISHED HP 250 G3 15.6 Notebook, Intel 4th Gen i3, 4GB RAM, 500GB HDD, Win 8.1, M5G69UTABA<\/productName>\n    <productType>RAM Memory<\/productType>\n    <price>\n        <currency>USD<\/currency>\n        <amount>329.99<\/amount>\n    <\/price>\n    <publishedStatus>PUBLISHED<\/publishedStatus>\n<\/ItemResponse>\n"
                             }
@@ -385,29 +389,10 @@
             },
             "ItemResponses": {
                 "required": [
-                    "itemResponse"
+                    "ItemResponse"
                 ],
                 "type": "object",
                 "properties": {
-                    "errors": {
-                        "type": "array",
-                        "xml": {
-                            "name": "error"
-                        },
-                        "items": {
-                            "$ref": "#\/components\/schemas\/GatewayError"
-                        }
-                    },
-                    "itemResponse": {
-                        "type": "array",
-                        "description": "Items included in the response list",
-                        "xml": {
-                            "name": "ItemResponse"
-                        },
-                        "items": {
-                            "$ref": "#\/components\/schemas\/ItemResponse"
-                        }
-                    },
                     "totalItems": {
                         "type": "integer",
                         "description": "Total Items for the query",
@@ -416,6 +401,25 @@
                     "nextCursor": {
                         "type": "string",
                         "description": "Used for pagination when more than 200 items are retrieved. The nextCursor value of the response includes a link to another GET call which retrieves the next page of results."
+                    },
+                    "error": {
+                        "type": "array",
+                        "xml": {
+                            "name": "error"
+                        },
+                        "items": {
+                            "$ref": "#\/components\/schemas\/GatewayError"
+                        }
+                    },
+                    "ItemResponse": {
+                        "type": "array",
+                        "description": "Items included in the response list",
+                        "xml": {
+                            "name": "ItemResponse"
+                        },
+                        "items": {
+                            "$ref": "#\/components\/schemas\/ItemResponse"
+                        }
                     }
                 },
                 "xml": {

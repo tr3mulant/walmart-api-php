@@ -3,7 +3,7 @@
     "info": {
         "title": "Inventory Management",
         "description": "Maintaining up-to-date inventory for your items on Walmart.com ensures a great experience for your customers and greater sales opportunities for you.",
-        "version": "0.6.3"
+        "version": "0.7.0"
     },
     "servers": [
         {
@@ -37,7 +37,8 @@
                         "content": {
                             "application\/xml": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/InventoryV2"
+                                    "$ref": "#\/components\/schemas\/InventoryV2",
+                                    "x-expose-headers": true
                                 },
                                 "example": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<inventory xmlns:ns2=\"http:\/\/walmart.com\/\">\n    <sku>1068155<\/sku>\n    <quantity>\n        <unit>EACH<\/unit>\n        <amount>23<\/amount>\n    <\/quantity>\n    <fulfillmentLagTime>1<\/fulfillmentLagTime>\n<\/inventory>"
                             }
@@ -88,7 +89,8 @@
                         "content": {
                             "application\/xml": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/InventoryV2"
+                                    "$ref": "#\/components\/schemas\/InventoryV2",
+                                    "x-expose-headers": true
                                 },
                                 "example": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<inventory xmlns:ns2=\"http:\/\/walmart.com\/\">\n    <sku>1068155<\/sku>\n    <quantity>\n        <unit>EACH<\/unit>\n        <amount>23<\/amount>\n    <\/quantity>\n    <fulfillmentLagTime>1<\/fulfillmentLagTime>\n<\/inventory>"
                             }
@@ -154,7 +156,8 @@
                         "content": {
                             "application\/xml": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/FeedId"
+                                    "$ref": "#\/components\/schemas\/FeedId",
+                                    "x-expose-headers": true
                                 },
                                 "example": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<FeedAcknowledgement xmlns:ns2=\"http:\/\/walmart.com\/\">\n    <feedId>E9C04D1FFD99479FBC1341D56DD5F930@AQMB_wA<\/feedId>\n<\/FeedAcknowledgement>"
                             }

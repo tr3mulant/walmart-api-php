@@ -3,7 +3,7 @@
     "info": {
         "title": "Content Management",
         "description": "The content management feed allows you to process content for items in bulk. You can take in content via the content feeds. Use the XSDs to manage content.",
-        "version": "0.6.3"
+        "version": "0.7.0"
     },
     "paths": {
         "\/v3\/feeds": {
@@ -56,7 +56,8 @@
                         "content": {
                             "application\/xml": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/FeedId"
+                                    "$ref": "#\/components\/schemas\/FeedId",
+                                    "x-expose-headers": true
                                 },
                                 "example": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<ns2:FeedAcknowledgement xmlns:ns2=\"http:\/\/walmart.com\/\">\n    <ns2:feedid>039F4AEA0B3A4E1FBEF0A6403507B18C@AQQBAQA<\/ns2:feedid>\n<\/ns2:FeedAcknowledgement>"
                             }
@@ -112,7 +113,8 @@
                         "content": {
                             "application\/xml": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/FeedId"
+                                    "$ref": "#\/components\/schemas\/FeedId",
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -171,7 +173,8 @@
                         "content": {
                             "application\/xml": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/FeedRecordResponse"
+                                    "$ref": "#\/components\/schemas\/FeedRecordResponse",
+                                    "x-expose-headers": true
                                 },
                                 "example": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<ns2:list xmlns:ns2=\"http:\/\/walmart.com\/\">\n    <ns2:totalresults>1<\/ns2:totalresults>\n    <ns2:offset>0<\/ns2:offset>\n    <ns2:limit>50<\/ns2:limit>\n    <ns2:results>\n        <ns2:feed>\n            <ns2:feedid>039F4AEA0B3A4E1FBEF0A6403507B18C@AQQBAQA<\/ns2:feedid>\n            <ns2:feedtype>CONTENT_PRODUCT<\/ns2:feedtype>\n            <ns2:partnerid>721407<\/ns2:partnerid>\n            <ns2:itemsreceived>1<\/ns2:itemsreceived>\n            <ns2:itemssucceeded>1<\/ns2:itemssucceeded>\n            <ns2:itemsfailed>0<\/ns2:itemsfailed>\n            <ns2:itemsprocessing>0<\/ns2:itemsprocessing>\n            <ns2:feedstatus>PROCESSED<\/ns2:feedstatus>\n            <ns2:feeddate>2016-08-29T21:00:47.546Z<\/ns2:feeddate>\n            <ns2:batchid>b1234<\/ns2:batchid>\n            <ns2:modifieddtm>2016-08-29T21:01:17.099Z<\/ns2:modifieddtm>\n            <ns2:filename>V3_101_Electronics.xlsm<\/ns2:filename>\n            <ns2:itemdataerrorcount>0<\/ns2:itemdataerrorcount>\n            <ns2:itemsystemerrorcount>0<\/ns2:itemsystemerrorcount>\n            <ns2:itemtimeouterrorcount>0<\/ns2:itemtimeouterrorcount>\n        <\/ns2:feed>\n    <\/ns2:results>\n<\/ns2:list>"
                             }
@@ -241,7 +244,8 @@
                         "content": {
                             "application\/xml": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/PartnerFeedResponse"
+                                    "$ref": "#\/components\/schemas\/PartnerFeedResponse",
+                                    "x-expose-headers": true
                                 },
                                 "example": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<ns2:PartnerFeedResponse xmlns:ns2=\"http:\/\/walmart.com\/\">\n    <ns2:feedId>4BD182294ECD4398AEBF3A4FAEB1AE30@AQMBAAA<\/ns2:feedId>\n    <ns2:feedStatus>PROCESSED<\/ns2:feedStatus>\n    <ns2:ingestionErrors\/>\n    <ns2:itemsReceived>3<\/ns2:itemsReceived>\n    <ns2:itemsSucceeded>3<\/ns2:itemsSucceeded>\n    <ns2:itemsFailed>0<\/ns2:itemsFailed>\n    <ns2:itemsProcessing>0<\/ns2:itemsProcessing>\n    <ns2:offset>0<\/ns2:offset>\n    <ns2:limit>50<\/ns2:limit>\n    <ns2:itemDetails>\n        <ns2:itemIngestionStatus>\n            <ns2:martId>0<\/ns2:martId>\n            <ns2:sku>Ikk3EoRhOVsL9kmWgM6y<\/ns2:sku>\n            <ns2:wpid>2SID2R8VLS5F<\/ns2:wpid>\n            <ns2:ingestionStatus>SUCCESS<\/ns2:ingestionStatus>\n            <ns2:ingestionErrors\/>\n        <\/ns2:itemIngestionStatus>\n        <ns2:itemIngestionStatus>\n            <ns2:martId>0<\/ns2:martId>\n            <ns2:sku>pfszvVuJ8TWgz4nKLHst<\/ns2:sku>\n            <ns2:wpid>4NZ5M2JBIK2O<\/ns2:wpid>\n            <ns2:ingestionStatus>SUCCESS<\/ns2:ingestionStatus>\n            <ns2:ingestionErrors\/>\n        <\/ns2:itemIngestionStatus>\n        <ns2:itemIngestionStatus>\n            <ns2:martId>0<\/ns2:martId>\n            <ns2:sku>JWEWrfXxN9WSEPuJ1usA<\/ns2:sku>\n            <ns2:wpid>5C1J547KN0UT<\/ns2:wpid>\n            <ns2:ingestionStatus>SUCCESS<\/ns2:ingestionStatus>\n            <ns2:ingestionErrors\/>\n        <\/ns2:itemIngestionStatus>\n    <\/ns2:itemDetails>\n<\/ns2:PartnerFeedResponse>"
                             }
@@ -354,15 +358,6 @@
             "FeedRecordResponse": {
                 "type": "object",
                 "properties": {
-                    "errors": {
-                        "type": "array",
-                        "xml": {
-                            "name": "error"
-                        },
-                        "items": {
-                            "$ref": "#\/components\/schemas\/GatewayError"
-                        }
-                    },
                     "totalResults": {
                         "type": "integer",
                         "description": "Total number of feeds returned",
@@ -385,6 +380,15 @@
                         },
                         "items": {
                             "$ref": "#\/components\/schemas\/FeedRecord"
+                        }
+                    },
+                    "error": {
+                        "type": "array",
+                        "xml": {
+                            "name": "error"
+                        },
+                        "items": {
+                            "$ref": "#\/components\/schemas\/GatewayError"
                         }
                     }
                 },
@@ -518,15 +522,6 @@
             "PartnerFeedResponse": {
                 "type": "object",
                 "properties": {
-                    "errors": {
-                        "type": "array",
-                        "xml": {
-                            "name": "error"
-                        },
-                        "items": {
-                            "$ref": "#\/components\/schemas\/GatewayError"
-                        }
-                    },
                     "feedId": {
                         "type": "string",
                         "description": "A unique ID used for tracking the Feed File"
@@ -576,6 +571,15 @@
                     },
                     "itemDetails": {
                         "$ref": "#\/components\/schemas\/ItemDetails"
+                    },
+                    "error": {
+                        "type": "array",
+                        "xml": {
+                            "name": "error"
+                        },
+                        "items": {
+                            "$ref": "#\/components\/schemas\/GatewayError"
+                        }
                     }
                 },
                 "xml": {

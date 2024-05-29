@@ -3,7 +3,7 @@
     "info": {
         "title": "Price Management",
         "description": "The price is a fundamental building block for your listing on Walmart.com. You can use the price management APIs to set up and manage the price for a given item",
-        "version": "0.6.3"
+        "version": "0.7.0"
     },
     "servers": [
         {
@@ -56,7 +56,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/RepricerEntityResponse"
+                                    "$ref": "#\/components\/schemas\/RepricerEntityResponse",
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -91,7 +92,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/RepricerEntityDeleteResponse"
+                                    "$ref": "#\/components\/schemas\/RepricerEntityDeleteResponse",
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -162,7 +164,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/RepricerIncentiveCollectionResponse"
+                                    "$ref": "#\/components\/schemas\/RepricerIncentiveCollectionResponse",
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -198,7 +201,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/UpdateRepricerIncentiveResponse"
+                                    "$ref": "#\/components\/schemas\/UpdateRepricerIncentiveResponse",
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -249,7 +253,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ItemPriceResponse"
+                                    "$ref": "#\/components\/schemas\/ItemPriceResponse",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "ItemPriceResponse": {
@@ -294,7 +299,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/FeedUploadResponseDTO"
+                                    "$ref": "#\/components\/schemas\/FeedUploadResponseDTO",
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -333,7 +339,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/RepricerEntityResponse"
+                                    "$ref": "#\/components\/schemas\/RepricerEntityResponse",
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -444,7 +451,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/FeedId"
+                                    "$ref": "#\/components\/schemas\/FeedId",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "feedId": "14066B6642344B76A8B77AC094F8C63B@AVMBAgA"
@@ -490,7 +498,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CapProgramResponse"
+                                    "$ref": "#\/components\/schemas\/CapProgramResponse",
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -518,7 +527,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/RepricerEntityCollectionResponse"
+                                    "$ref": "#\/components\/schemas\/RepricerEntityCollectionResponse",
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -748,15 +758,6 @@
             "ItemPriceResponse": {
                 "type": "object",
                 "properties": {
-                    "errors": {
-                        "type": "array",
-                        "xml": {
-                            "name": "error"
-                        },
-                        "items": {
-                            "$ref": "#\/components\/schemas\/GatewayError"
-                        }
-                    },
                     "statusCode": {
                         "type": "integer",
                         "format": "int32"
@@ -780,6 +781,15 @@
                         "description": "A message of acknowledgement for a price update",
                         "xml": {
                             "namespace": "http:\/\/walmart.com\/"
+                        }
+                    },
+                    "error": {
+                        "type": "array",
+                        "xml": {
+                            "name": "error"
+                        },
+                        "items": {
+                            "$ref": "#\/components\/schemas\/GatewayError"
                         }
                     }
                 },

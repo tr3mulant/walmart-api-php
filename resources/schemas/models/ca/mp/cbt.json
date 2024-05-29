@@ -3,7 +3,7 @@
     "info": {
         "title": "International Shipping",
         "description": "The International Shipping API enables sellers to use the Ship with Walmart (SWW) International shipping programs to ship their goods from the US to Canada. These APIs provide support for two SWW Programs : SWW Express & SWW Ground",
-        "version": "0.6.3"
+        "version": "0.7.0"
     },
     "servers": [
         {
@@ -82,7 +82,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CommonResponseLabelGenerationResponseCa"
+                                    "$ref": "#\/components\/schemas\/CommonResponseLabelGenerationResponseCa",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "data": {
@@ -156,7 +157,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CommonResponseConsolidationResponse"
+                                    "$ref": "#\/components\/schemas\/CommonResponseConsolidationResponse",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "data": {
@@ -212,7 +214,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CommonResponseConsolidationResponse"
+                                    "$ref": "#\/components\/schemas\/CommonResponseConsolidationResponse",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "data": {
@@ -262,7 +265,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CommonResponseListLabelGenerationResponseCa"
+                                    "$ref": "#\/components\/schemas\/CommonResponseListLabelGenerationResponseCa",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "data": [
@@ -311,7 +315,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CarrierCommonResponseListCarrierResponse"
+                                    "$ref": "#\/components\/schemas\/CarrierCommonResponseListCarrierResponse",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "carriers": [
@@ -418,7 +423,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CommonResponseLabelGenerationResponseCa"
+                                    "$ref": "#\/components\/schemas\/CommonResponseLabelGenerationResponseCa",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "data": "true"
@@ -461,7 +467,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CommonResponseListCarrierPackageResponse"
+                                    "$ref": "#\/components\/schemas\/CommonResponseListCarrierPackageResponse",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "data": [

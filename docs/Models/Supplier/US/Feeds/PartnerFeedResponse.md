@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**errors** | [**\Walmart\Models\Supplier\US\Feeds\GatewayError[]**](GatewayError.md) |  | [optional]
 **feedId** | **string** | A unique ID used for tracking the Feed File | [optional]
 **feedStatus** | **string** | Can be one of the following: RECEIVED, INPROGRESS, PROCESSED, or ERROR | [optional]
 **ingestionErrors** | [**\Walmart\Models\Supplier\US\Feeds\IngestionErrors**](IngestionErrors.md) |  | [optional]
@@ -15,6 +14,7 @@ Name | Type | Description | Notes
 **offset** | **int** | The object response to the starting number, where 0 is the first entity available for request | [optional]
 **limit** | **int** | The number of items returned. Cannot be greater than 1000. | [optional]
 **itemDetails** | [**\Walmart\Models\Supplier\US\Feeds\ItemDetails**](ItemDetails.md) |  | [optional]
+**error** | [**\Walmart\Models\Supplier\US\Feeds\GatewayError[]**](GatewayError.md) |  | [optional]
 
 
 [[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

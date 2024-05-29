@@ -3,7 +3,7 @@
     "info": {
         "title": "Order Management",
         "description": "The Walmart Order Management APIs help Drop Ship Vendors stay up to date on order fulfillment.",
-        "version": "0.6.3"
+        "version": "0.7.0"
     },
     "servers": [
         {
@@ -93,7 +93,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetOrderResponseRecord"
+                                    "$ref": "#\/components\/schemas\/GetOrderResponseRecord",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "order": {
@@ -273,7 +274,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetOrderResponseRecord"
+                                    "$ref": "#\/components\/schemas\/GetOrderResponseRecord",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "order": {
@@ -418,7 +420,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetOrderResponseRecord"
+                                    "$ref": "#\/components\/schemas\/GetOrderResponseRecord",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "order": {
@@ -679,7 +682,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/OrdersListType"
+                                    "$ref": "#\/components\/schemas\/OrdersListType",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "list": {
@@ -948,7 +952,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetOrderResponseRecord"
+                                    "$ref": "#\/components\/schemas\/GetOrderResponseRecord",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "order": {
@@ -1200,7 +1205,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/OrdersListType"
+                                    "$ref": "#\/components\/schemas\/OrdersListType",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "list": {
@@ -2130,7 +2136,10 @@
             "PhoneValidity": {
                 "type": "object",
                 "properties": {
-                    "validationType": {
+                    "validatedBy": {
+                        "type": "string"
+                    },
+                    "type": {
                         "type": "string",
                         "xml": {
                             "name": "type"
@@ -2142,7 +2151,7 @@
                             "UNKNOWN"
                         ]
                     },
-                    "validationStatus": {
+                    "status": {
                         "type": "string",
                         "xml": {
                             "name": "status"
@@ -2154,15 +2163,12 @@
                             "UNKNOWN"
                         ]
                     },
-                    "validatedDate": {
+                    "validatedOn": {
                         "type": "string",
                         "format": "date-time",
                         "xml": {
                             "name": "validatedOn"
                         }
-                    },
-                    "validatedBy": {
-                        "type": "string"
                     }
                 },
                 "xml": {

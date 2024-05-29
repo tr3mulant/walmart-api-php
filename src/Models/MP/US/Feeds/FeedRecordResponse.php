@@ -50,11 +50,11 @@ class FeedRecordResponse extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'errors' => '\Walmart\Models\MP\US\Feeds\GatewayError[]',
         'totalResults' => 'int',
         'offset' => 'int',
         'limit' => 'int',
-        'results' => '\Walmart\Models\MP\US\Feeds\ResultRecord'
+        'results' => '\Walmart\Models\MP\US\Feeds\ResultRecord',
+        'error' => '\Walmart\Models\MP\US\Feeds\GatewayError[]'
     ];
 
     /**
@@ -65,11 +65,11 @@ class FeedRecordResponse extends BaseModel
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'errors' => null,
         'totalResults' => 'int64',
         'offset' => 'int64',
         'limit' => 'int32',
-        'results' => null
+        'results' => null,
+        'error' => null
     ];
 
     /**
@@ -78,11 +78,11 @@ class FeedRecordResponse extends BaseModel
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'errors' => false,
         'totalResults' => false,
         'offset' => false,
         'limit' => false,
-        'results' => false
+        'results' => false,
+        'error' => false
     ];
 
     /**
@@ -92,11 +92,11 @@ class FeedRecordResponse extends BaseModel
      * @var string[]
      */
     protected static array $attributeMap = [
-        'errors' => 'errors',
         'totalResults' => 'totalResults',
         'offset' => 'offset',
         'limit' => 'limit',
-        'results' => 'results'
+        'results' => 'results',
+        'error' => 'error'
     ];
 
     /**
@@ -105,11 +105,11 @@ class FeedRecordResponse extends BaseModel
      * @var string[]
      */
     protected static array $setters = [
-        'errors' => 'setErrors',
         'totalResults' => 'setTotalResults',
         'offset' => 'setOffset',
         'limit' => 'setLimit',
-        'results' => 'setResults'
+        'results' => 'setResults',
+        'error' => 'setError'
     ];
 
     /**
@@ -118,11 +118,11 @@ class FeedRecordResponse extends BaseModel
      * @var string[]
      */
     protected static array $getters = [
-        'errors' => 'getErrors',
         'totalResults' => 'getTotalResults',
         'offset' => 'getOffset',
         'limit' => 'getLimit',
-        'results' => 'getResults'
+        'results' => 'getResults',
+        'error' => 'getError'
     ];
 
     /**
@@ -133,11 +133,11 @@ class FeedRecordResponse extends BaseModel
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('errors', $data ?? [], null);
         $this->setIfExists('totalResults', $data ?? [], null);
         $this->setIfExists('offset', $data ?? [], null);
         $this->setIfExists('limit', $data ?? [], null);
         $this->setIfExists('results', $data ?? [], null);
+        $this->setIfExists('error', $data ?? [], null);
     }
 
     /**
@@ -151,35 +151,6 @@ class FeedRecordResponse extends BaseModel
 
 
         return $invalidProperties;
-    }
-
-    /**
-     * Gets errors
-     *
-     * @return \Walmart\Models\MP\US\Feeds\GatewayError[]|null
-    
-     */
-    public function getErrors()
-    {
-        return $this->container['errors'];
-    }
-
-    /**
-     * Sets errors
-     *
-     * @param \Walmart\Models\MP\US\Feeds\GatewayError[]|null $errors errors
-     *
-     * @return self
-    
-     */
-    public function setErrors($errors)
-    {
-        if (is_null($errors)) {
-            throw new \InvalidArgumentException('non-nullable errors cannot be null');
-        }
-
-        $this->container['errors'] = $errors;
-        return $this;
     }
 
     /**
@@ -295,6 +266,35 @@ class FeedRecordResponse extends BaseModel
         }
 
         $this->container['results'] = $results;
+        return $this;
+    }
+
+    /**
+     * Gets error
+     *
+     * @return \Walmart\Models\MP\US\Feeds\GatewayError[]|null
+    
+     */
+    public function getError()
+    {
+        return $this->container['error'];
+    }
+
+    /**
+     * Sets error
+     *
+     * @param \Walmart\Models\MP\US\Feeds\GatewayError[]|null $error error
+     *
+     * @return self
+    
+     */
+    public function setError($error)
+    {
+        if (is_null($error)) {
+            throw new \InvalidArgumentException('non-nullable error cannot be null');
+        }
+
+        $this->container['error'] = $error;
         return $this;
     }
 }

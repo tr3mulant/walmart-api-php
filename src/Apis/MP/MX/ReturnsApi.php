@@ -162,7 +162,10 @@ class ReturnsApi extends BaseApi
                         $content = (string) $response->getBody();
                         $contentType = $response->getHeader('Content-Type')[0] ?? '';
                         if ('\Walmart\Models\MP\MX\Returns\GetReturnOrdersResponseWithCursor' !== 'string') {
-                            $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
+                            if ($contentType === 'application/xml') {
+                                $content = $this->jsonEncodeXML($content);
+                            }
+                            $content = json_decode($content);
                         }
                     }
 
@@ -174,7 +177,10 @@ class ReturnsApi extends BaseApi
                         $content = (string) $response->getBody();
                         $contentType = $response->getHeader('Content-Type')[0] ?? '';
                         if ('\Walmart\Models\MP\MX\Returns\ErrorResponse' !== 'string') {
-                            $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
+                            if ($contentType === 'application/xml') {
+                                $content = $this->jsonEncodeXML($content);
+                            }
+                            $content = json_decode($content);
                         }
                     }
 
@@ -186,7 +192,10 @@ class ReturnsApi extends BaseApi
                         $content = (string) $response->getBody();
                         $contentType = $response->getHeader('Content-Type')[0] ?? '';
                         if ('\Walmart\Models\MP\MX\Returns\ErrorResponse' !== 'string') {
-                            $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
+                            if ($contentType === 'application/xml') {
+                                $content = $this->jsonEncodeXML($content);
+                            }
+                            $content = json_decode($content);
                         }
                     }
 
@@ -200,7 +209,10 @@ class ReturnsApi extends BaseApi
                 $content = (string) $response->getBody();
                 $contentType = $response->getHeader('Content-Type')[0] ?? '';
                 if ($returnType !== 'string') {
-                    $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
+                    if ($contentType === 'application/xml') {
+                        $content = $this->jsonEncodeXML($content);
+                    }
+                    $content = json_decode($content);
                 }
             }
 
@@ -628,7 +640,10 @@ class ReturnsApi extends BaseApi
                         $content = (string) $response->getBody();
                         $contentType = $response->getHeader('Content-Type')[0] ?? '';
                         if ('\Walmart\Models\MP\MX\Returns\GetReturnOrdersResponse' !== 'string') {
-                            $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
+                            if ($contentType === 'application/xml') {
+                                $content = $this->jsonEncodeXML($content);
+                            }
+                            $content = json_decode($content);
                         }
                     }
 
@@ -640,7 +655,10 @@ class ReturnsApi extends BaseApi
                         $content = (string) $response->getBody();
                         $contentType = $response->getHeader('Content-Type')[0] ?? '';
                         if ('\Walmart\Models\MP\MX\Returns\ErrorResponse' !== 'string') {
-                            $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
+                            if ($contentType === 'application/xml') {
+                                $content = $this->jsonEncodeXML($content);
+                            }
+                            $content = json_decode($content);
                         }
                     }
 
@@ -652,7 +670,10 @@ class ReturnsApi extends BaseApi
                         $content = (string) $response->getBody();
                         $contentType = $response->getHeader('Content-Type')[0] ?? '';
                         if ('\Walmart\Models\MP\MX\Returns\ErrorResponse' !== 'string') {
-                            $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
+                            if ($contentType === 'application/xml') {
+                                $content = $this->jsonEncodeXML($content);
+                            }
+                            $content = json_decode($content);
                         }
                     }
 
@@ -666,7 +687,10 @@ class ReturnsApi extends BaseApi
                 $content = (string) $response->getBody();
                 $contentType = $response->getHeader('Content-Type')[0] ?? '';
                 if ($returnType !== 'string') {
-                    $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
+                    if ($contentType === 'application/xml') {
+                        $content = $this->jsonEncodeXML($content);
+                    }
+                    $content = json_decode($content);
                 }
             }
 
@@ -1070,7 +1094,10 @@ class ReturnsApi extends BaseApi
                         $content = (string) $response->getBody();
                         $contentType = $response->getHeader('Content-Type')[0] ?? '';
                         if ('string' !== 'string') {
-                            $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
+                            if ($contentType === 'application/xml') {
+                                $content = $this->jsonEncodeXML($content);
+                            }
+                            $content = json_decode($content);
                         }
                     }
 
@@ -1082,7 +1109,10 @@ class ReturnsApi extends BaseApi
                         $content = (string) $response->getBody();
                         $contentType = $response->getHeader('Content-Type')[0] ?? '';
                         if ('\Walmart\Models\MP\MX\Returns\ErrorResponse' !== 'string') {
-                            $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
+                            if ($contentType === 'application/xml') {
+                                $content = $this->jsonEncodeXML($content);
+                            }
+                            $content = json_decode($content);
                         }
                     }
 
@@ -1094,7 +1124,10 @@ class ReturnsApi extends BaseApi
                         $content = (string) $response->getBody();
                         $contentType = $response->getHeader('Content-Type')[0] ?? '';
                         if ('\Walmart\Models\MP\MX\Returns\ErrorResponse' !== 'string') {
-                            $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
+                            if ($contentType === 'application/xml') {
+                                $content = $this->jsonEncodeXML($content);
+                            }
+                            $content = json_decode($content);
                         }
                     }
 
@@ -1108,7 +1141,10 @@ class ReturnsApi extends BaseApi
                 $content = (string) $response->getBody();
                 $contentType = $response->getHeader('Content-Type')[0] ?? '';
                 if ($returnType !== 'string') {
-                    $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
+                    if ($contentType === 'application/xml') {
+                        $content = $this->jsonEncodeXML($content);
+                    }
+                    $content = json_decode($content);
                 }
             }
 

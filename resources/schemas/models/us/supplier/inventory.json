@@ -3,7 +3,7 @@
     "info": {
         "title": "Inventory Management",
         "description": "Maintaining up-to-date inventory for items on Walmart.com ensures a great customer experience as well as greater sales opportunities. The Inventory Management APIs allow management of current or recently changed inventory supply.",
-        "version": "0.6.3"
+        "version": "0.7.0"
     },
     "servers": [
         {
@@ -55,7 +55,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/InventoryResponse"
+                                    "$ref": "#\/components\/schemas\/InventoryResponse",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "sku": "1487132332472",
@@ -135,7 +136,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/InventoryResponse"
+                                    "$ref": "#\/components\/schemas\/InventoryResponse",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "sku": "1487132332472",
@@ -357,7 +359,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/FeedIdInventory"
+                                    "$ref": "#\/components\/schemas\/FeedIdInventory",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "feedId": "991B8779687C4D5DBC06DF18DB167192@AQkBAQA"
@@ -423,7 +426,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/InventoriesDTO"
+                                    "$ref": "#\/components\/schemas\/InventoriesDTO",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "sku": "AR-CTIX-0092",

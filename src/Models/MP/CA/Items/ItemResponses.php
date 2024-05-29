@@ -50,10 +50,10 @@ class ItemResponses extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'errors' => '\Walmart\Models\MP\CA\Items\GatewayError[]',
-        'itemResponse' => '\Walmart\Models\MP\CA\Items\ItemResponse[]',
         'totalItems' => 'int',
-        'nextCursor' => 'string'
+        'nextCursor' => 'string',
+        'error' => '\Walmart\Models\MP\CA\Items\GatewayError[]',
+        'itemResponse' => '\Walmart\Models\MP\CA\Items\ItemResponse[]'
     ];
 
     /**
@@ -64,10 +64,10 @@ class ItemResponses extends BaseModel
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'errors' => null,
-        'itemResponse' => null,
         'totalItems' => 'int64',
-        'nextCursor' => null
+        'nextCursor' => null,
+        'error' => null,
+        'itemResponse' => null
     ];
 
     /**
@@ -76,10 +76,10 @@ class ItemResponses extends BaseModel
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'errors' => false,
-        'itemResponse' => false,
         'totalItems' => false,
-        'nextCursor' => false
+        'nextCursor' => false,
+        'error' => false,
+        'itemResponse' => false
     ];
 
     /**
@@ -89,10 +89,10 @@ class ItemResponses extends BaseModel
      * @var string[]
      */
     protected static array $attributeMap = [
-        'errors' => 'errors',
-        'itemResponse' => 'itemResponse',
         'totalItems' => 'totalItems',
-        'nextCursor' => 'nextCursor'
+        'nextCursor' => 'nextCursor',
+        'error' => 'error',
+        'itemResponse' => 'ItemResponse'
     ];
 
     /**
@@ -101,10 +101,10 @@ class ItemResponses extends BaseModel
      * @var string[]
      */
     protected static array $setters = [
-        'errors' => 'setErrors',
-        'itemResponse' => 'setItemResponse',
         'totalItems' => 'setTotalItems',
-        'nextCursor' => 'setNextCursor'
+        'nextCursor' => 'setNextCursor',
+        'error' => 'setError',
+        'itemResponse' => 'setItemResponse'
     ];
 
     /**
@@ -113,10 +113,10 @@ class ItemResponses extends BaseModel
      * @var string[]
      */
     protected static array $getters = [
-        'errors' => 'getErrors',
-        'itemResponse' => 'getItemResponse',
         'totalItems' => 'getTotalItems',
-        'nextCursor' => 'getNextCursor'
+        'nextCursor' => 'getNextCursor',
+        'error' => 'getError',
+        'itemResponse' => 'getItemResponse'
     ];
 
     /**
@@ -127,10 +127,10 @@ class ItemResponses extends BaseModel
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('errors', $data ?? [], null);
-        $this->setIfExists('itemResponse', $data ?? [], null);
         $this->setIfExists('totalItems', $data ?? [], null);
         $this->setIfExists('nextCursor', $data ?? [], null);
+        $this->setIfExists('error', $data ?? [], null);
+        $this->setIfExists('itemResponse', $data ?? [], null);
     }
 
     /**
@@ -147,64 +147,6 @@ class ItemResponses extends BaseModel
         }
 
         return $invalidProperties;
-    }
-
-    /**
-     * Gets errors
-     *
-     * @return \Walmart\Models\MP\CA\Items\GatewayError[]|null
-    
-     */
-    public function getErrors()
-    {
-        return $this->container['errors'];
-    }
-
-    /**
-     * Sets errors
-     *
-     * @param \Walmart\Models\MP\CA\Items\GatewayError[]|null $errors errors
-     *
-     * @return self
-    
-     */
-    public function setErrors($errors)
-    {
-        if (is_null($errors)) {
-            throw new \InvalidArgumentException('non-nullable errors cannot be null');
-        }
-
-        $this->container['errors'] = $errors;
-        return $this;
-    }
-
-    /**
-     * Gets itemResponse
-     *
-     * @return \Walmart\Models\MP\CA\Items\ItemResponse[]
-    
-     */
-    public function getItemResponse()
-    {
-        return $this->container['itemResponse'];
-    }
-
-    /**
-     * Sets itemResponse
-     *
-     * @param \Walmart\Models\MP\CA\Items\ItemResponse[] $itemResponse Items included in the response list
-     *
-     * @return self
-    
-     */
-    public function setItemResponse($itemResponse)
-    {
-        if (is_null($itemResponse)) {
-            throw new \InvalidArgumentException('non-nullable itemResponse cannot be null');
-        }
-
-        $this->container['itemResponse'] = $itemResponse;
-        return $this;
     }
 
     /**
@@ -262,6 +204,64 @@ class ItemResponses extends BaseModel
         }
 
         $this->container['nextCursor'] = $nextCursor;
+        return $this;
+    }
+
+    /**
+     * Gets error
+     *
+     * @return \Walmart\Models\MP\CA\Items\GatewayError[]|null
+    
+     */
+    public function getError()
+    {
+        return $this->container['error'];
+    }
+
+    /**
+     * Sets error
+     *
+     * @param \Walmart\Models\MP\CA\Items\GatewayError[]|null $error error
+     *
+     * @return self
+    
+     */
+    public function setError($error)
+    {
+        if (is_null($error)) {
+            throw new \InvalidArgumentException('non-nullable error cannot be null');
+        }
+
+        $this->container['error'] = $error;
+        return $this;
+    }
+
+    /**
+     * Gets itemResponse
+     *
+     * @return \Walmart\Models\MP\CA\Items\ItemResponse[]
+    
+     */
+    public function getItemResponse()
+    {
+        return $this->container['itemResponse'];
+    }
+
+    /**
+     * Sets itemResponse
+     *
+     * @param \Walmart\Models\MP\CA\Items\ItemResponse[] $itemResponse Items included in the response list
+     *
+     * @return self
+    
+     */
+    public function setItemResponse($itemResponse)
+    {
+        if (is_null($itemResponse)) {
+            throw new \InvalidArgumentException('non-nullable itemResponse cannot be null');
+        }
+
+        $this->container['itemResponse'] = $itemResponse;
         return $this;
     }
 }

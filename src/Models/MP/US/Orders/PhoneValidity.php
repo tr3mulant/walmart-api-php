@@ -50,10 +50,10 @@ class PhoneValidity extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'validationType' => 'string',
-        'validationStatus' => 'string',
-        'validatedDate' => '\DateTime',
-        'validatedBy' => 'string'
+        'validatedBy' => 'string',
+        'type' => 'string',
+        'status' => 'string',
+        'validatedOn' => '\DateTime'
     ];
 
     /**
@@ -64,10 +64,10 @@ class PhoneValidity extends BaseModel
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'validationType' => null,
-        'validationStatus' => null,
-        'validatedDate' => 'date-time',
-        'validatedBy' => null
+        'validatedBy' => null,
+        'type' => null,
+        'status' => null,
+        'validatedOn' => 'date-time'
     ];
 
     /**
@@ -76,10 +76,10 @@ class PhoneValidity extends BaseModel
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'validationType' => false,
-        'validationStatus' => false,
-        'validatedDate' => false,
-        'validatedBy' => false
+        'validatedBy' => false,
+        'type' => false,
+        'status' => false,
+        'validatedOn' => false
     ];
 
     /**
@@ -89,10 +89,10 @@ class PhoneValidity extends BaseModel
      * @var string[]
      */
     protected static array $attributeMap = [
-        'validationType' => 'validationType',
-        'validationStatus' => 'validationStatus',
-        'validatedDate' => 'validatedDate',
-        'validatedBy' => 'validatedBy'
+        'validatedBy' => 'validatedBy',
+        'type' => 'type',
+        'status' => 'status',
+        'validatedOn' => 'validatedOn'
     ];
 
     /**
@@ -101,10 +101,10 @@ class PhoneValidity extends BaseModel
      * @var string[]
      */
     protected static array $setters = [
-        'validationType' => 'setValidationType',
-        'validationStatus' => 'setValidationStatus',
-        'validatedDate' => 'setValidatedDate',
-        'validatedBy' => 'setValidatedBy'
+        'validatedBy' => 'setValidatedBy',
+        'type' => 'setType',
+        'status' => 'setStatus',
+        'validatedOn' => 'setValidatedOn'
     ];
 
     /**
@@ -113,41 +113,41 @@ class PhoneValidity extends BaseModel
      * @var string[]
      */
     protected static array $getters = [
-        'validationType' => 'getValidationType',
-        'validationStatus' => 'getValidationStatus',
-        'validatedDate' => 'getValidatedDate',
-        'validatedBy' => 'getValidatedBy'
+        'validatedBy' => 'getValidatedBy',
+        'type' => 'getType',
+        'status' => 'getStatus',
+        'validatedOn' => 'getValidatedOn'
     ];
 
 
-    public const VALIDATION_TYPE_SMS = 'SMS';
+    public const TYPE_SMS = 'SMS';
 
-    public const VALIDATION_TYPE_IVR = 'IVR';
+    public const TYPE_IVR = 'IVR';
 
-    public const VALIDATION_TYPE_CALL = 'CALL';
+    public const TYPE_CALL = 'CALL';
 
-    public const VALIDATION_TYPE_UNKNOWN = 'UNKNOWN';
+    public const TYPE_UNKNOWN = 'UNKNOWN';
 
-    public const VALIDATION_STATUS_SUCCESS = 'SUCCESS';
+    public const STATUS_SUCCESS = 'SUCCESS';
 
-    public const VALIDATION_STATUS_FAILURE = 'FAILURE';
+    public const STATUS_FAILURE = 'FAILURE';
 
-    public const VALIDATION_STATUS_SKIPPED = 'SKIPPED';
+    public const STATUS_SKIPPED = 'SKIPPED';
 
-    public const VALIDATION_STATUS_UNKNOWN = 'UNKNOWN';
+    public const STATUS_UNKNOWN = 'UNKNOWN';
 
     /**
      * Gets allowable values of the enum
      *
      * @return string[]
      */
-    public function getValidationTypeAllowableValues()
+    public function getTypeAllowableValues()
     {
         return [
-            self::VALIDATION_TYPE_SMS,
-            self::VALIDATION_TYPE_IVR,
-            self::VALIDATION_TYPE_CALL,
-            self::VALIDATION_TYPE_UNKNOWN,
+            self::TYPE_SMS,
+            self::TYPE_IVR,
+            self::TYPE_CALL,
+            self::TYPE_UNKNOWN,
         ];
     }
 
@@ -157,13 +157,13 @@ class PhoneValidity extends BaseModel
      *
      * @return string[]
      */
-    public function getValidationStatusAllowableValues()
+    public function getStatusAllowableValues()
     {
         return [
-            self::VALIDATION_STATUS_SUCCESS,
-            self::VALIDATION_STATUS_FAILURE,
-            self::VALIDATION_STATUS_SKIPPED,
-            self::VALIDATION_STATUS_UNKNOWN,
+            self::STATUS_SUCCESS,
+            self::STATUS_FAILURE,
+            self::STATUS_SKIPPED,
+            self::STATUS_UNKNOWN,
         ];
     }
 
@@ -175,10 +175,10 @@ class PhoneValidity extends BaseModel
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('validationType', $data ?? [], null);
-        $this->setIfExists('validationStatus', $data ?? [], null);
-        $this->setIfExists('validatedDate', $data ?? [], null);
         $this->setIfExists('validatedBy', $data ?? [], null);
+        $this->setIfExists('type', $data ?? [], null);
+        $this->setIfExists('status', $data ?? [], null);
+        $this->setIfExists('validatedOn', $data ?? [], null);
     }
 
     /**
@@ -190,133 +190,26 @@ class PhoneValidity extends BaseModel
     {
         $invalidProperties = [];
 
-        $allowedValues = $this->getValidationTypeAllowableValues();
-        if (!is_null($this->container['validationType']) && !in_array($this->container['validationType'], $allowedValues, true)) {
+        $allowedValues = $this->getTypeAllowableValues();
+        if (!is_null($this->container['type']) && !in_array($this->container['type'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'validationType', must be one of '%s'",
-                $this->container['validationType'],
+                "invalid value '%s' for 'type', must be one of '%s'",
+                $this->container['type'],
                 implode("', '", $allowedValues)
             );
         }
 
-        $allowedValues = $this->getValidationStatusAllowableValues();
-        if (!is_null($this->container['validationStatus']) && !in_array($this->container['validationStatus'], $allowedValues, true)) {
+        $allowedValues = $this->getStatusAllowableValues();
+        if (!is_null($this->container['status']) && !in_array($this->container['status'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'validationStatus', must be one of '%s'",
-                $this->container['validationStatus'],
+                "invalid value '%s' for 'status', must be one of '%s'",
+                $this->container['status'],
                 implode("', '", $allowedValues)
             );
         }
 
 
         return $invalidProperties;
-    }
-
-    /**
-     * Gets validationType
-     *
-     * @return string|null
-    
-     */
-    public function getValidationType()
-    {
-        return $this->container['validationType'];
-    }
-
-    /**
-     * Sets validationType
-     *
-     * @param string|null $validationType validationType
-     *
-     * @return self
-    
-     */
-    public function setValidationType($validationType)
-    {
-        if (is_null($validationType)) {
-            throw new \InvalidArgumentException('non-nullable validationType cannot be null');
-        }
-        $allowedValues = $this->getValidationTypeAllowableValues();
-        if (!in_array($validationType, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'validationType', must be one of '%s'",
-                    $validationType,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-
-        $this->container['validationType'] = $validationType;
-        return $this;
-    }
-
-    /**
-     * Gets validationStatus
-     *
-     * @return string|null
-    
-     */
-    public function getValidationStatus()
-    {
-        return $this->container['validationStatus'];
-    }
-
-    /**
-     * Sets validationStatus
-     *
-     * @param string|null $validationStatus validationStatus
-     *
-     * @return self
-    
-     */
-    public function setValidationStatus($validationStatus)
-    {
-        if (is_null($validationStatus)) {
-            throw new \InvalidArgumentException('non-nullable validationStatus cannot be null');
-        }
-        $allowedValues = $this->getValidationStatusAllowableValues();
-        if (!in_array($validationStatus, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'validationStatus', must be one of '%s'",
-                    $validationStatus,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-
-        $this->container['validationStatus'] = $validationStatus;
-        return $this;
-    }
-
-    /**
-     * Gets validatedDate
-     *
-     * @return \DateTime|null
-    
-     */
-    public function getValidatedDate()
-    {
-        return $this->container['validatedDate'];
-    }
-
-    /**
-     * Sets validatedDate
-     *
-     * @param \DateTime|null $validatedDate validatedDate
-     *
-     * @return self
-    
-     */
-    public function setValidatedDate($validatedDate)
-    {
-        if (is_null($validatedDate)) {
-            throw new \InvalidArgumentException('non-nullable validatedDate cannot be null');
-        }
-
-        $this->container['validatedDate'] = $validatedDate;
-        return $this;
     }
 
     /**
@@ -345,6 +238,113 @@ class PhoneValidity extends BaseModel
         }
 
         $this->container['validatedBy'] = $validatedBy;
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return string|null
+    
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string|null $type type
+     *
+     * @return self
+    
+     */
+    public function setType($type)
+    {
+        if (is_null($type)) {
+            throw new \InvalidArgumentException('non-nullable type cannot be null');
+        }
+        $allowedValues = $this->getTypeAllowableValues();
+        if (!in_array($type, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'type', must be one of '%s'",
+                    $type,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+
+        $this->container['type'] = $type;
+        return $this;
+    }
+
+    /**
+     * Gets status
+     *
+     * @return string|null
+    
+     */
+    public function getStatus()
+    {
+        return $this->container['status'];
+    }
+
+    /**
+     * Sets status
+     *
+     * @param string|null $status status
+     *
+     * @return self
+    
+     */
+    public function setStatus($status)
+    {
+        if (is_null($status)) {
+            throw new \InvalidArgumentException('non-nullable status cannot be null');
+        }
+        $allowedValues = $this->getStatusAllowableValues();
+        if (!in_array($status, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'status', must be one of '%s'",
+                    $status,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+
+        $this->container['status'] = $status;
+        return $this;
+    }
+
+    /**
+     * Gets validatedOn
+     *
+     * @return \DateTime|null
+    
+     */
+    public function getValidatedOn()
+    {
+        return $this->container['validatedOn'];
+    }
+
+    /**
+     * Sets validatedOn
+     *
+     * @param \DateTime|null $validatedOn validatedOn
+     *
+     * @return self
+    
+     */
+    public function setValidatedOn($validatedOn)
+    {
+        if (is_null($validatedOn)) {
+            throw new \InvalidArgumentException('non-nullable validatedOn cannot be null');
+        }
+
+        $this->container['validatedOn'] = $validatedOn;
         return $this;
     }
 }

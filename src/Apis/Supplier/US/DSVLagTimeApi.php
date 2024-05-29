@@ -141,7 +141,10 @@ class DSVLagTimeApi extends BaseApi
                         $content = (string) $response->getBody();
                         $contentType = $response->getHeader('Content-Type')[0] ?? '';
                         if ('\Walmart\Models\Supplier\US\DSVLagTime\LagTimeResponse' !== 'string') {
-                            $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
+                            if ($contentType === 'application/xml') {
+                                $content = $this->jsonEncodeXML($content);
+                            }
+                            $content = json_decode($content);
                         }
                     }
 
@@ -155,7 +158,10 @@ class DSVLagTimeApi extends BaseApi
                 $content = (string) $response->getBody();
                 $contentType = $response->getHeader('Content-Type')[0] ?? '';
                 if ($returnType !== 'string') {
-                    $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
+                    if ($contentType === 'application/xml') {
+                        $content = $this->jsonEncodeXML($content);
+                    }
+                    $content = json_decode($content);
                 }
             }
 
@@ -493,7 +499,10 @@ class DSVLagTimeApi extends BaseApi
                         $content = (string) $response->getBody();
                         $contentType = $response->getHeader('Content-Type')[0] ?? '';
                         if ('\Walmart\Models\Supplier\US\DSVLagTime\FeedId' !== 'string') {
-                            $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
+                            if ($contentType === 'application/xml') {
+                                $content = $this->jsonEncodeXML($content);
+                            }
+                            $content = json_decode($content);
                         }
                     }
 
@@ -507,7 +516,10 @@ class DSVLagTimeApi extends BaseApi
                 $content = (string) $response->getBody();
                 $contentType = $response->getHeader('Content-Type')[0] ?? '';
                 if ($returnType !== 'string') {
-                    $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
+                    if ($contentType === 'application/xml') {
+                        $content = $this->jsonEncodeXML($content);
+                    }
+                    $content = json_decode($content);
                 }
             }
 

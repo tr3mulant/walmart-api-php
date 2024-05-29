@@ -53,7 +53,7 @@ class CurrencyType extends BaseModel
       */
     protected static array $openAPITypes = [
         'currencyAmount' => 'float',
-        'unit' => 'string'
+        'currencyUnit' => 'string'
     ];
 
     /**
@@ -65,7 +65,7 @@ class CurrencyType extends BaseModel
       */
     protected static array $openAPIFormats = [
         'currencyAmount' => null,
-        'unit' => null
+        'currencyUnit' => null
     ];
 
     /**
@@ -75,7 +75,7 @@ class CurrencyType extends BaseModel
       */
     protected static array $openAPINullables = [
         'currencyAmount' => false,
-        'unit' => false
+        'currencyUnit' => false
     ];
 
     /**
@@ -86,7 +86,7 @@ class CurrencyType extends BaseModel
      */
     protected static array $attributeMap = [
         'currencyAmount' => 'currencyAmount',
-        'unit' => 'unit'
+        'currencyUnit' => 'currencyUnit'
     ];
 
     /**
@@ -96,7 +96,7 @@ class CurrencyType extends BaseModel
      */
     protected static array $setters = [
         'currencyAmount' => 'setCurrencyAmount',
-        'unit' => 'setUnit'
+        'currencyUnit' => 'setCurrencyUnit'
     ];
 
     /**
@@ -106,525 +106,525 @@ class CurrencyType extends BaseModel
      */
     protected static array $getters = [
         'currencyAmount' => 'getCurrencyAmount',
-        'unit' => 'getUnit'
+        'currencyUnit' => 'getCurrencyUnit'
     ];
 
 
-    public const UNIT_AED = 'AED';
+    public const CURRENCY_UNIT_AED = 'AED';
 
-    public const UNIT_AFN = 'AFN';
+    public const CURRENCY_UNIT_AFN = 'AFN';
 
-    public const UNIT_ALL = 'ALL';
+    public const CURRENCY_UNIT_ALL = 'ALL';
 
-    public const UNIT_AMD = 'AMD';
+    public const CURRENCY_UNIT_AMD = 'AMD';
 
-    public const UNIT_ANG = 'ANG';
+    public const CURRENCY_UNIT_ANG = 'ANG';
 
-    public const UNIT_AOA = 'AOA';
+    public const CURRENCY_UNIT_AOA = 'AOA';
 
-    public const UNIT_ARS = 'ARS';
+    public const CURRENCY_UNIT_ARS = 'ARS';
 
-    public const UNIT_AUD = 'AUD';
+    public const CURRENCY_UNIT_AUD = 'AUD';
 
-    public const UNIT_AWG = 'AWG';
+    public const CURRENCY_UNIT_AWG = 'AWG';
 
-    public const UNIT_AZN = 'AZN';
+    public const CURRENCY_UNIT_AZN = 'AZN';
 
-    public const UNIT_BAM = 'BAM';
+    public const CURRENCY_UNIT_BAM = 'BAM';
 
-    public const UNIT_BBD = 'BBD';
+    public const CURRENCY_UNIT_BBD = 'BBD';
 
-    public const UNIT_BDT = 'BDT';
+    public const CURRENCY_UNIT_BDT = 'BDT';
 
-    public const UNIT_BGN = 'BGN';
+    public const CURRENCY_UNIT_BGN = 'BGN';
 
-    public const UNIT_BHD = 'BHD';
+    public const CURRENCY_UNIT_BHD = 'BHD';
 
-    public const UNIT_BIF = 'BIF';
+    public const CURRENCY_UNIT_BIF = 'BIF';
 
-    public const UNIT_BMD = 'BMD';
+    public const CURRENCY_UNIT_BMD = 'BMD';
 
-    public const UNIT_BND = 'BND';
+    public const CURRENCY_UNIT_BND = 'BND';
 
-    public const UNIT_BOB = 'BOB';
+    public const CURRENCY_UNIT_BOB = 'BOB';
 
-    public const UNIT_BRL = 'BRL';
+    public const CURRENCY_UNIT_BRL = 'BRL';
 
-    public const UNIT_BSD = 'BSD';
+    public const CURRENCY_UNIT_BSD = 'BSD';
 
-    public const UNIT_BTN = 'BTN';
+    public const CURRENCY_UNIT_BTN = 'BTN';
 
-    public const UNIT_BWP = 'BWP';
+    public const CURRENCY_UNIT_BWP = 'BWP';
 
-    public const UNIT_BYR = 'BYR';
+    public const CURRENCY_UNIT_BYR = 'BYR';
 
-    public const UNIT_BZD = 'BZD';
+    public const CURRENCY_UNIT_BZD = 'BZD';
 
-    public const UNIT_CAD = 'CAD';
+    public const CURRENCY_UNIT_CAD = 'CAD';
 
-    public const UNIT_CDF = 'CDF';
+    public const CURRENCY_UNIT_CDF = 'CDF';
 
-    public const UNIT_CHF = 'CHF';
+    public const CURRENCY_UNIT_CHF = 'CHF';
 
-    public const UNIT_CLP = 'CLP';
+    public const CURRENCY_UNIT_CLP = 'CLP';
 
-    public const UNIT_CNY = 'CNY';
+    public const CURRENCY_UNIT_CNY = 'CNY';
 
-    public const UNIT_COP = 'COP';
+    public const CURRENCY_UNIT_COP = 'COP';
 
-    public const UNIT_CRC = 'CRC';
+    public const CURRENCY_UNIT_CRC = 'CRC';
 
-    public const UNIT_CUP = 'CUP';
+    public const CURRENCY_UNIT_CUP = 'CUP';
 
-    public const UNIT_CVE = 'CVE';
+    public const CURRENCY_UNIT_CVE = 'CVE';
 
-    public const UNIT_CZK = 'CZK';
+    public const CURRENCY_UNIT_CZK = 'CZK';
 
-    public const UNIT_DJF = 'DJF';
+    public const CURRENCY_UNIT_DJF = 'DJF';
 
-    public const UNIT_DKK = 'DKK';
+    public const CURRENCY_UNIT_DKK = 'DKK';
 
-    public const UNIT_DOP = 'DOP';
+    public const CURRENCY_UNIT_DOP = 'DOP';
 
-    public const UNIT_DZD = 'DZD';
+    public const CURRENCY_UNIT_DZD = 'DZD';
 
-    public const UNIT_EGP = 'EGP';
+    public const CURRENCY_UNIT_EGP = 'EGP';
 
-    public const UNIT_ERN = 'ERN';
+    public const CURRENCY_UNIT_ERN = 'ERN';
 
-    public const UNIT_ETB = 'ETB';
+    public const CURRENCY_UNIT_ETB = 'ETB';
 
-    public const UNIT_EUR = 'EUR';
+    public const CURRENCY_UNIT_EUR = 'EUR';
 
-    public const UNIT_FJD = 'FJD';
+    public const CURRENCY_UNIT_FJD = 'FJD';
 
-    public const UNIT_FKP = 'FKP';
+    public const CURRENCY_UNIT_FKP = 'FKP';
 
-    public const UNIT_GBP = 'GBP';
+    public const CURRENCY_UNIT_GBP = 'GBP';
 
-    public const UNIT_GEL = 'GEL';
+    public const CURRENCY_UNIT_GEL = 'GEL';
 
-    public const UNIT_GHS = 'GHS';
+    public const CURRENCY_UNIT_GHS = 'GHS';
 
-    public const UNIT_GIP = 'GIP';
+    public const CURRENCY_UNIT_GIP = 'GIP';
 
-    public const UNIT_GMD = 'GMD';
+    public const CURRENCY_UNIT_GMD = 'GMD';
 
-    public const UNIT_GNF = 'GNF';
+    public const CURRENCY_UNIT_GNF = 'GNF';
 
-    public const UNIT_GTQ = 'GTQ';
+    public const CURRENCY_UNIT_GTQ = 'GTQ';
 
-    public const UNIT_GYD = 'GYD';
+    public const CURRENCY_UNIT_GYD = 'GYD';
 
-    public const UNIT_HKD = 'HKD';
+    public const CURRENCY_UNIT_HKD = 'HKD';
 
-    public const UNIT_HNL = 'HNL';
+    public const CURRENCY_UNIT_HNL = 'HNL';
 
-    public const UNIT_HRK = 'HRK';
+    public const CURRENCY_UNIT_HRK = 'HRK';
 
-    public const UNIT_HTG = 'HTG';
+    public const CURRENCY_UNIT_HTG = 'HTG';
 
-    public const UNIT_HUF = 'HUF';
+    public const CURRENCY_UNIT_HUF = 'HUF';
 
-    public const UNIT_IDR = 'IDR';
+    public const CURRENCY_UNIT_IDR = 'IDR';
 
-    public const UNIT_ILS = 'ILS';
+    public const CURRENCY_UNIT_ILS = 'ILS';
 
-    public const UNIT_INR = 'INR';
+    public const CURRENCY_UNIT_INR = 'INR';
 
-    public const UNIT_IQD = 'IQD';
+    public const CURRENCY_UNIT_IQD = 'IQD';
 
-    public const UNIT_IRR = 'IRR';
+    public const CURRENCY_UNIT_IRR = 'IRR';
 
-    public const UNIT_ISK = 'ISK';
+    public const CURRENCY_UNIT_ISK = 'ISK';
 
-    public const UNIT_JMD = 'JMD';
+    public const CURRENCY_UNIT_JMD = 'JMD';
 
-    public const UNIT_JOD = 'JOD';
+    public const CURRENCY_UNIT_JOD = 'JOD';
 
-    public const UNIT_JPY = 'JPY';
+    public const CURRENCY_UNIT_JPY = 'JPY';
 
-    public const UNIT_KES = 'KES';
+    public const CURRENCY_UNIT_KES = 'KES';
 
-    public const UNIT_KGS = 'KGS';
+    public const CURRENCY_UNIT_KGS = 'KGS';
 
-    public const UNIT_KHR = 'KHR';
+    public const CURRENCY_UNIT_KHR = 'KHR';
 
-    public const UNIT_KMF = 'KMF';
+    public const CURRENCY_UNIT_KMF = 'KMF';
 
-    public const UNIT_KPW = 'KPW';
+    public const CURRENCY_UNIT_KPW = 'KPW';
 
-    public const UNIT_KRW = 'KRW';
+    public const CURRENCY_UNIT_KRW = 'KRW';
 
-    public const UNIT_KWD = 'KWD';
+    public const CURRENCY_UNIT_KWD = 'KWD';
 
-    public const UNIT_KYD = 'KYD';
+    public const CURRENCY_UNIT_KYD = 'KYD';
 
-    public const UNIT_KZT = 'KZT';
+    public const CURRENCY_UNIT_KZT = 'KZT';
 
-    public const UNIT_LAK = 'LAK';
+    public const CURRENCY_UNIT_LAK = 'LAK';
 
-    public const UNIT_LBP = 'LBP';
+    public const CURRENCY_UNIT_LBP = 'LBP';
 
-    public const UNIT_LKR = 'LKR';
+    public const CURRENCY_UNIT_LKR = 'LKR';
 
-    public const UNIT_LRD = 'LRD';
+    public const CURRENCY_UNIT_LRD = 'LRD';
 
-    public const UNIT_LSL = 'LSL';
+    public const CURRENCY_UNIT_LSL = 'LSL';
 
-    public const UNIT_LTL = 'LTL';
+    public const CURRENCY_UNIT_LTL = 'LTL';
 
-    public const UNIT_LVL = 'LVL';
+    public const CURRENCY_UNIT_LVL = 'LVL';
 
-    public const UNIT_LYD = 'LYD';
+    public const CURRENCY_UNIT_LYD = 'LYD';
 
-    public const UNIT_MAD = 'MAD';
+    public const CURRENCY_UNIT_MAD = 'MAD';
 
-    public const UNIT_MDL = 'MDL';
+    public const CURRENCY_UNIT_MDL = 'MDL';
 
-    public const UNIT_MGA = 'MGA';
+    public const CURRENCY_UNIT_MGA = 'MGA';
 
-    public const UNIT_MKD = 'MKD';
+    public const CURRENCY_UNIT_MKD = 'MKD';
 
-    public const UNIT_MMK = 'MMK';
+    public const CURRENCY_UNIT_MMK = 'MMK';
 
-    public const UNIT_MNT = 'MNT';
+    public const CURRENCY_UNIT_MNT = 'MNT';
 
-    public const UNIT_MOP = 'MOP';
+    public const CURRENCY_UNIT_MOP = 'MOP';
 
-    public const UNIT_MRO = 'MRO';
+    public const CURRENCY_UNIT_MRO = 'MRO';
 
-    public const UNIT_MUR = 'MUR';
+    public const CURRENCY_UNIT_MUR = 'MUR';
 
-    public const UNIT_MVR = 'MVR';
+    public const CURRENCY_UNIT_MVR = 'MVR';
 
-    public const UNIT_MWK = 'MWK';
+    public const CURRENCY_UNIT_MWK = 'MWK';
 
-    public const UNIT_MXN = 'MXN';
+    public const CURRENCY_UNIT_MXN = 'MXN';
 
-    public const UNIT_MYR = 'MYR';
+    public const CURRENCY_UNIT_MYR = 'MYR';
 
-    public const UNIT_MZN = 'MZN';
+    public const CURRENCY_UNIT_MZN = 'MZN';
 
-    public const UNIT_NAD = 'NAD';
+    public const CURRENCY_UNIT_NAD = 'NAD';
 
-    public const UNIT_NGN = 'NGN';
+    public const CURRENCY_UNIT_NGN = 'NGN';
 
-    public const UNIT_NIO = 'NIO';
+    public const CURRENCY_UNIT_NIO = 'NIO';
 
-    public const UNIT_NOK = 'NOK';
+    public const CURRENCY_UNIT_NOK = 'NOK';
 
-    public const UNIT_NPR = 'NPR';
+    public const CURRENCY_UNIT_NPR = 'NPR';
 
-    public const UNIT_NZD = 'NZD';
+    public const CURRENCY_UNIT_NZD = 'NZD';
 
-    public const UNIT_OMR = 'OMR';
+    public const CURRENCY_UNIT_OMR = 'OMR';
 
-    public const UNIT_PAB = 'PAB';
+    public const CURRENCY_UNIT_PAB = 'PAB';
 
-    public const UNIT_PEN = 'PEN';
+    public const CURRENCY_UNIT_PEN = 'PEN';
 
-    public const UNIT_PGK = 'PGK';
+    public const CURRENCY_UNIT_PGK = 'PGK';
 
-    public const UNIT_PHP = 'PHP';
+    public const CURRENCY_UNIT_PHP = 'PHP';
 
-    public const UNIT_PKR = 'PKR';
+    public const CURRENCY_UNIT_PKR = 'PKR';
 
-    public const UNIT_PLN = 'PLN';
+    public const CURRENCY_UNIT_PLN = 'PLN';
 
-    public const UNIT_PYG = 'PYG';
+    public const CURRENCY_UNIT_PYG = 'PYG';
 
-    public const UNIT_QAR = 'QAR';
+    public const CURRENCY_UNIT_QAR = 'QAR';
 
-    public const UNIT_RON = 'RON';
+    public const CURRENCY_UNIT_RON = 'RON';
 
-    public const UNIT_RSD = 'RSD';
+    public const CURRENCY_UNIT_RSD = 'RSD';
 
-    public const UNIT_RUB = 'RUB';
+    public const CURRENCY_UNIT_RUB = 'RUB';
 
-    public const UNIT_RUR = 'RUR';
+    public const CURRENCY_UNIT_RUR = 'RUR';
 
-    public const UNIT_RWF = 'RWF';
+    public const CURRENCY_UNIT_RWF = 'RWF';
 
-    public const UNIT_SAR = 'SAR';
+    public const CURRENCY_UNIT_SAR = 'SAR';
 
-    public const UNIT_SBD = 'SBD';
+    public const CURRENCY_UNIT_SBD = 'SBD';
 
-    public const UNIT_SCR = 'SCR';
+    public const CURRENCY_UNIT_SCR = 'SCR';
 
-    public const UNIT_SDG = 'SDG';
+    public const CURRENCY_UNIT_SDG = 'SDG';
 
-    public const UNIT_SEK = 'SEK';
+    public const CURRENCY_UNIT_SEK = 'SEK';
 
-    public const UNIT_SGD = 'SGD';
+    public const CURRENCY_UNIT_SGD = 'SGD';
 
-    public const UNIT_SHP = 'SHP';
+    public const CURRENCY_UNIT_SHP = 'SHP';
 
-    public const UNIT_SLL = 'SLL';
+    public const CURRENCY_UNIT_SLL = 'SLL';
 
-    public const UNIT_SOS = 'SOS';
+    public const CURRENCY_UNIT_SOS = 'SOS';
 
-    public const UNIT_SRD = 'SRD';
+    public const CURRENCY_UNIT_SRD = 'SRD';
 
-    public const UNIT_STD = 'STD';
+    public const CURRENCY_UNIT_STD = 'STD';
 
-    public const UNIT_SYP = 'SYP';
+    public const CURRENCY_UNIT_SYP = 'SYP';
 
-    public const UNIT_SZL = 'SZL';
+    public const CURRENCY_UNIT_SZL = 'SZL';
 
-    public const UNIT_THB = 'THB';
+    public const CURRENCY_UNIT_THB = 'THB';
 
-    public const UNIT_TJS = 'TJS';
+    public const CURRENCY_UNIT_TJS = 'TJS';
 
-    public const UNIT_TMT = 'TMT';
+    public const CURRENCY_UNIT_TMT = 'TMT';
 
-    public const UNIT_TND = 'TND';
+    public const CURRENCY_UNIT_TND = 'TND';
 
-    public const UNIT_TOP = 'TOP';
+    public const CURRENCY_UNIT_TOP = 'TOP';
 
-    public const UNIT__TRY = 'TRY';
+    public const CURRENCY_UNIT__TRY = 'TRY';
 
-    public const UNIT_TTD = 'TTD';
+    public const CURRENCY_UNIT_TTD = 'TTD';
 
-    public const UNIT_TWD = 'TWD';
+    public const CURRENCY_UNIT_TWD = 'TWD';
 
-    public const UNIT_TZS = 'TZS';
+    public const CURRENCY_UNIT_TZS = 'TZS';
 
-    public const UNIT_UAH = 'UAH';
+    public const CURRENCY_UNIT_UAH = 'UAH';
 
-    public const UNIT_UGX = 'UGX';
+    public const CURRENCY_UNIT_UGX = 'UGX';
 
-    public const UNIT_USD = 'USD';
+    public const CURRENCY_UNIT_USD = 'USD';
 
-    public const UNIT_UYU = 'UYU';
+    public const CURRENCY_UNIT_UYU = 'UYU';
 
-    public const UNIT_UZS = 'UZS';
+    public const CURRENCY_UNIT_UZS = 'UZS';
 
-    public const UNIT_VEF = 'VEF';
+    public const CURRENCY_UNIT_VEF = 'VEF';
 
-    public const UNIT_VND = 'VND';
+    public const CURRENCY_UNIT_VND = 'VND';
 
-    public const UNIT_VUV = 'VUV';
+    public const CURRENCY_UNIT_VUV = 'VUV';
 
-    public const UNIT_WST = 'WST';
+    public const CURRENCY_UNIT_WST = 'WST';
 
-    public const UNIT_XAF = 'XAF';
+    public const CURRENCY_UNIT_XAF = 'XAF';
 
-    public const UNIT_XAG = 'XAG';
+    public const CURRENCY_UNIT_XAG = 'XAG';
 
-    public const UNIT_XAU = 'XAU';
+    public const CURRENCY_UNIT_XAU = 'XAU';
 
-    public const UNIT_XBA = 'XBA';
+    public const CURRENCY_UNIT_XBA = 'XBA';
 
-    public const UNIT_XBB = 'XBB';
+    public const CURRENCY_UNIT_XBB = 'XBB';
 
-    public const UNIT_XBC = 'XBC';
+    public const CURRENCY_UNIT_XBC = 'XBC';
 
-    public const UNIT_XBD = 'XBD';
+    public const CURRENCY_UNIT_XBD = 'XBD';
 
-    public const UNIT_XCD = 'XCD';
+    public const CURRENCY_UNIT_XCD = 'XCD';
 
-    public const UNIT_XDR = 'XDR';
+    public const CURRENCY_UNIT_XDR = 'XDR';
 
-    public const UNIT_XFU = 'XFU';
+    public const CURRENCY_UNIT_XFU = 'XFU';
 
-    public const UNIT_XOF = 'XOF';
+    public const CURRENCY_UNIT_XOF = 'XOF';
 
-    public const UNIT_XPD = 'XPD';
+    public const CURRENCY_UNIT_XPD = 'XPD';
 
-    public const UNIT_XPF = 'XPF';
+    public const CURRENCY_UNIT_XPF = 'XPF';
 
-    public const UNIT_XPT = 'XPT';
+    public const CURRENCY_UNIT_XPT = 'XPT';
 
-    public const UNIT_XTS = 'XTS';
+    public const CURRENCY_UNIT_XTS = 'XTS';
 
-    public const UNIT_XXX = 'XXX';
+    public const CURRENCY_UNIT_XXX = 'XXX';
 
-    public const UNIT_YER = 'YER';
+    public const CURRENCY_UNIT_YER = 'YER';
 
-    public const UNIT_ZAR = 'ZAR';
+    public const CURRENCY_UNIT_ZAR = 'ZAR';
 
-    public const UNIT_ZMK = 'ZMK';
+    public const CURRENCY_UNIT_ZMK = 'ZMK';
 
-    public const UNIT_ZWL = 'ZWL';
+    public const CURRENCY_UNIT_ZWL = 'ZWL';
 
     /**
      * Gets allowable values of the enum
      *
      * @return string[]
      */
-    public function getUnitAllowableValues()
+    public function getCurrencyUnitAllowableValues()
     {
         return [
-            self::UNIT_AED,
-            self::UNIT_AFN,
-            self::UNIT_ALL,
-            self::UNIT_AMD,
-            self::UNIT_ANG,
-            self::UNIT_AOA,
-            self::UNIT_ARS,
-            self::UNIT_AUD,
-            self::UNIT_AWG,
-            self::UNIT_AZN,
-            self::UNIT_BAM,
-            self::UNIT_BBD,
-            self::UNIT_BDT,
-            self::UNIT_BGN,
-            self::UNIT_BHD,
-            self::UNIT_BIF,
-            self::UNIT_BMD,
-            self::UNIT_BND,
-            self::UNIT_BOB,
-            self::UNIT_BRL,
-            self::UNIT_BSD,
-            self::UNIT_BTN,
-            self::UNIT_BWP,
-            self::UNIT_BYR,
-            self::UNIT_BZD,
-            self::UNIT_CAD,
-            self::UNIT_CDF,
-            self::UNIT_CHF,
-            self::UNIT_CLP,
-            self::UNIT_CNY,
-            self::UNIT_COP,
-            self::UNIT_CRC,
-            self::UNIT_CUP,
-            self::UNIT_CVE,
-            self::UNIT_CZK,
-            self::UNIT_DJF,
-            self::UNIT_DKK,
-            self::UNIT_DOP,
-            self::UNIT_DZD,
-            self::UNIT_EGP,
-            self::UNIT_ERN,
-            self::UNIT_ETB,
-            self::UNIT_EUR,
-            self::UNIT_FJD,
-            self::UNIT_FKP,
-            self::UNIT_GBP,
-            self::UNIT_GEL,
-            self::UNIT_GHS,
-            self::UNIT_GIP,
-            self::UNIT_GMD,
-            self::UNIT_GNF,
-            self::UNIT_GTQ,
-            self::UNIT_GYD,
-            self::UNIT_HKD,
-            self::UNIT_HNL,
-            self::UNIT_HRK,
-            self::UNIT_HTG,
-            self::UNIT_HUF,
-            self::UNIT_IDR,
-            self::UNIT_ILS,
-            self::UNIT_INR,
-            self::UNIT_IQD,
-            self::UNIT_IRR,
-            self::UNIT_ISK,
-            self::UNIT_JMD,
-            self::UNIT_JOD,
-            self::UNIT_JPY,
-            self::UNIT_KES,
-            self::UNIT_KGS,
-            self::UNIT_KHR,
-            self::UNIT_KMF,
-            self::UNIT_KPW,
-            self::UNIT_KRW,
-            self::UNIT_KWD,
-            self::UNIT_KYD,
-            self::UNIT_KZT,
-            self::UNIT_LAK,
-            self::UNIT_LBP,
-            self::UNIT_LKR,
-            self::UNIT_LRD,
-            self::UNIT_LSL,
-            self::UNIT_LTL,
-            self::UNIT_LVL,
-            self::UNIT_LYD,
-            self::UNIT_MAD,
-            self::UNIT_MDL,
-            self::UNIT_MGA,
-            self::UNIT_MKD,
-            self::UNIT_MMK,
-            self::UNIT_MNT,
-            self::UNIT_MOP,
-            self::UNIT_MRO,
-            self::UNIT_MUR,
-            self::UNIT_MVR,
-            self::UNIT_MWK,
-            self::UNIT_MXN,
-            self::UNIT_MYR,
-            self::UNIT_MZN,
-            self::UNIT_NAD,
-            self::UNIT_NGN,
-            self::UNIT_NIO,
-            self::UNIT_NOK,
-            self::UNIT_NPR,
-            self::UNIT_NZD,
-            self::UNIT_OMR,
-            self::UNIT_PAB,
-            self::UNIT_PEN,
-            self::UNIT_PGK,
-            self::UNIT_PHP,
-            self::UNIT_PKR,
-            self::UNIT_PLN,
-            self::UNIT_PYG,
-            self::UNIT_QAR,
-            self::UNIT_RON,
-            self::UNIT_RSD,
-            self::UNIT_RUB,
-            self::UNIT_RUR,
-            self::UNIT_RWF,
-            self::UNIT_SAR,
-            self::UNIT_SBD,
-            self::UNIT_SCR,
-            self::UNIT_SDG,
-            self::UNIT_SEK,
-            self::UNIT_SGD,
-            self::UNIT_SHP,
-            self::UNIT_SLL,
-            self::UNIT_SOS,
-            self::UNIT_SRD,
-            self::UNIT_STD,
-            self::UNIT_SYP,
-            self::UNIT_SZL,
-            self::UNIT_THB,
-            self::UNIT_TJS,
-            self::UNIT_TMT,
-            self::UNIT_TND,
-            self::UNIT_TOP,
-            self::UNIT__TRY,
-            self::UNIT_TTD,
-            self::UNIT_TWD,
-            self::UNIT_TZS,
-            self::UNIT_UAH,
-            self::UNIT_UGX,
-            self::UNIT_USD,
-            self::UNIT_UYU,
-            self::UNIT_UZS,
-            self::UNIT_VEF,
-            self::UNIT_VND,
-            self::UNIT_VUV,
-            self::UNIT_WST,
-            self::UNIT_XAF,
-            self::UNIT_XAG,
-            self::UNIT_XAU,
-            self::UNIT_XBA,
-            self::UNIT_XBB,
-            self::UNIT_XBC,
-            self::UNIT_XBD,
-            self::UNIT_XCD,
-            self::UNIT_XDR,
-            self::UNIT_XFU,
-            self::UNIT_XOF,
-            self::UNIT_XPD,
-            self::UNIT_XPF,
-            self::UNIT_XPT,
-            self::UNIT_XTS,
-            self::UNIT_XXX,
-            self::UNIT_YER,
-            self::UNIT_ZAR,
-            self::UNIT_ZMK,
-            self::UNIT_ZWL,
+            self::CURRENCY_UNIT_AED,
+            self::CURRENCY_UNIT_AFN,
+            self::CURRENCY_UNIT_ALL,
+            self::CURRENCY_UNIT_AMD,
+            self::CURRENCY_UNIT_ANG,
+            self::CURRENCY_UNIT_AOA,
+            self::CURRENCY_UNIT_ARS,
+            self::CURRENCY_UNIT_AUD,
+            self::CURRENCY_UNIT_AWG,
+            self::CURRENCY_UNIT_AZN,
+            self::CURRENCY_UNIT_BAM,
+            self::CURRENCY_UNIT_BBD,
+            self::CURRENCY_UNIT_BDT,
+            self::CURRENCY_UNIT_BGN,
+            self::CURRENCY_UNIT_BHD,
+            self::CURRENCY_UNIT_BIF,
+            self::CURRENCY_UNIT_BMD,
+            self::CURRENCY_UNIT_BND,
+            self::CURRENCY_UNIT_BOB,
+            self::CURRENCY_UNIT_BRL,
+            self::CURRENCY_UNIT_BSD,
+            self::CURRENCY_UNIT_BTN,
+            self::CURRENCY_UNIT_BWP,
+            self::CURRENCY_UNIT_BYR,
+            self::CURRENCY_UNIT_BZD,
+            self::CURRENCY_UNIT_CAD,
+            self::CURRENCY_UNIT_CDF,
+            self::CURRENCY_UNIT_CHF,
+            self::CURRENCY_UNIT_CLP,
+            self::CURRENCY_UNIT_CNY,
+            self::CURRENCY_UNIT_COP,
+            self::CURRENCY_UNIT_CRC,
+            self::CURRENCY_UNIT_CUP,
+            self::CURRENCY_UNIT_CVE,
+            self::CURRENCY_UNIT_CZK,
+            self::CURRENCY_UNIT_DJF,
+            self::CURRENCY_UNIT_DKK,
+            self::CURRENCY_UNIT_DOP,
+            self::CURRENCY_UNIT_DZD,
+            self::CURRENCY_UNIT_EGP,
+            self::CURRENCY_UNIT_ERN,
+            self::CURRENCY_UNIT_ETB,
+            self::CURRENCY_UNIT_EUR,
+            self::CURRENCY_UNIT_FJD,
+            self::CURRENCY_UNIT_FKP,
+            self::CURRENCY_UNIT_GBP,
+            self::CURRENCY_UNIT_GEL,
+            self::CURRENCY_UNIT_GHS,
+            self::CURRENCY_UNIT_GIP,
+            self::CURRENCY_UNIT_GMD,
+            self::CURRENCY_UNIT_GNF,
+            self::CURRENCY_UNIT_GTQ,
+            self::CURRENCY_UNIT_GYD,
+            self::CURRENCY_UNIT_HKD,
+            self::CURRENCY_UNIT_HNL,
+            self::CURRENCY_UNIT_HRK,
+            self::CURRENCY_UNIT_HTG,
+            self::CURRENCY_UNIT_HUF,
+            self::CURRENCY_UNIT_IDR,
+            self::CURRENCY_UNIT_ILS,
+            self::CURRENCY_UNIT_INR,
+            self::CURRENCY_UNIT_IQD,
+            self::CURRENCY_UNIT_IRR,
+            self::CURRENCY_UNIT_ISK,
+            self::CURRENCY_UNIT_JMD,
+            self::CURRENCY_UNIT_JOD,
+            self::CURRENCY_UNIT_JPY,
+            self::CURRENCY_UNIT_KES,
+            self::CURRENCY_UNIT_KGS,
+            self::CURRENCY_UNIT_KHR,
+            self::CURRENCY_UNIT_KMF,
+            self::CURRENCY_UNIT_KPW,
+            self::CURRENCY_UNIT_KRW,
+            self::CURRENCY_UNIT_KWD,
+            self::CURRENCY_UNIT_KYD,
+            self::CURRENCY_UNIT_KZT,
+            self::CURRENCY_UNIT_LAK,
+            self::CURRENCY_UNIT_LBP,
+            self::CURRENCY_UNIT_LKR,
+            self::CURRENCY_UNIT_LRD,
+            self::CURRENCY_UNIT_LSL,
+            self::CURRENCY_UNIT_LTL,
+            self::CURRENCY_UNIT_LVL,
+            self::CURRENCY_UNIT_LYD,
+            self::CURRENCY_UNIT_MAD,
+            self::CURRENCY_UNIT_MDL,
+            self::CURRENCY_UNIT_MGA,
+            self::CURRENCY_UNIT_MKD,
+            self::CURRENCY_UNIT_MMK,
+            self::CURRENCY_UNIT_MNT,
+            self::CURRENCY_UNIT_MOP,
+            self::CURRENCY_UNIT_MRO,
+            self::CURRENCY_UNIT_MUR,
+            self::CURRENCY_UNIT_MVR,
+            self::CURRENCY_UNIT_MWK,
+            self::CURRENCY_UNIT_MXN,
+            self::CURRENCY_UNIT_MYR,
+            self::CURRENCY_UNIT_MZN,
+            self::CURRENCY_UNIT_NAD,
+            self::CURRENCY_UNIT_NGN,
+            self::CURRENCY_UNIT_NIO,
+            self::CURRENCY_UNIT_NOK,
+            self::CURRENCY_UNIT_NPR,
+            self::CURRENCY_UNIT_NZD,
+            self::CURRENCY_UNIT_OMR,
+            self::CURRENCY_UNIT_PAB,
+            self::CURRENCY_UNIT_PEN,
+            self::CURRENCY_UNIT_PGK,
+            self::CURRENCY_UNIT_PHP,
+            self::CURRENCY_UNIT_PKR,
+            self::CURRENCY_UNIT_PLN,
+            self::CURRENCY_UNIT_PYG,
+            self::CURRENCY_UNIT_QAR,
+            self::CURRENCY_UNIT_RON,
+            self::CURRENCY_UNIT_RSD,
+            self::CURRENCY_UNIT_RUB,
+            self::CURRENCY_UNIT_RUR,
+            self::CURRENCY_UNIT_RWF,
+            self::CURRENCY_UNIT_SAR,
+            self::CURRENCY_UNIT_SBD,
+            self::CURRENCY_UNIT_SCR,
+            self::CURRENCY_UNIT_SDG,
+            self::CURRENCY_UNIT_SEK,
+            self::CURRENCY_UNIT_SGD,
+            self::CURRENCY_UNIT_SHP,
+            self::CURRENCY_UNIT_SLL,
+            self::CURRENCY_UNIT_SOS,
+            self::CURRENCY_UNIT_SRD,
+            self::CURRENCY_UNIT_STD,
+            self::CURRENCY_UNIT_SYP,
+            self::CURRENCY_UNIT_SZL,
+            self::CURRENCY_UNIT_THB,
+            self::CURRENCY_UNIT_TJS,
+            self::CURRENCY_UNIT_TMT,
+            self::CURRENCY_UNIT_TND,
+            self::CURRENCY_UNIT_TOP,
+            self::CURRENCY_UNIT__TRY,
+            self::CURRENCY_UNIT_TTD,
+            self::CURRENCY_UNIT_TWD,
+            self::CURRENCY_UNIT_TZS,
+            self::CURRENCY_UNIT_UAH,
+            self::CURRENCY_UNIT_UGX,
+            self::CURRENCY_UNIT_USD,
+            self::CURRENCY_UNIT_UYU,
+            self::CURRENCY_UNIT_UZS,
+            self::CURRENCY_UNIT_VEF,
+            self::CURRENCY_UNIT_VND,
+            self::CURRENCY_UNIT_VUV,
+            self::CURRENCY_UNIT_WST,
+            self::CURRENCY_UNIT_XAF,
+            self::CURRENCY_UNIT_XAG,
+            self::CURRENCY_UNIT_XAU,
+            self::CURRENCY_UNIT_XBA,
+            self::CURRENCY_UNIT_XBB,
+            self::CURRENCY_UNIT_XBC,
+            self::CURRENCY_UNIT_XBD,
+            self::CURRENCY_UNIT_XCD,
+            self::CURRENCY_UNIT_XDR,
+            self::CURRENCY_UNIT_XFU,
+            self::CURRENCY_UNIT_XOF,
+            self::CURRENCY_UNIT_XPD,
+            self::CURRENCY_UNIT_XPF,
+            self::CURRENCY_UNIT_XPT,
+            self::CURRENCY_UNIT_XTS,
+            self::CURRENCY_UNIT_XXX,
+            self::CURRENCY_UNIT_YER,
+            self::CURRENCY_UNIT_ZAR,
+            self::CURRENCY_UNIT_ZMK,
+            self::CURRENCY_UNIT_ZWL,
         ];
     }
 
@@ -637,7 +637,7 @@ class CurrencyType extends BaseModel
     public function __construct(array $data = null)
     {
         $this->setIfExists('currencyAmount', $data ?? [], null);
-        $this->setIfExists('unit', $data ?? [], null);
+        $this->setIfExists('currencyUnit', $data ?? [], null);
     }
 
     /**
@@ -652,14 +652,14 @@ class CurrencyType extends BaseModel
         if ($this->container['currencyAmount'] === null) {
             $invalidProperties[] = "'currencyAmount' can't be null";
         }
-        if ($this->container['unit'] === null) {
-            $invalidProperties[] = "'unit' can't be null";
+        if ($this->container['currencyUnit'] === null) {
+            $invalidProperties[] = "'currencyUnit' can't be null";
         }
-        $allowedValues = $this->getUnitAllowableValues();
-        if (!is_null($this->container['unit']) && !in_array($this->container['unit'], $allowedValues, true)) {
+        $allowedValues = $this->getCurrencyUnitAllowableValues();
+        if (!is_null($this->container['currencyUnit']) && !in_array($this->container['currencyUnit'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'unit', must be one of '%s'",
-                $this->container['unit'],
+                "invalid value '%s' for 'currencyUnit', must be one of '%s'",
+                $this->container['currencyUnit'],
                 implode("', '", $allowedValues)
             );
         }
@@ -698,41 +698,41 @@ class CurrencyType extends BaseModel
     }
 
     /**
-     * Gets unit
+     * Gets currencyUnit
      *
      * @return string
     
      */
-    public function getUnit()
+    public function getCurrencyUnit()
     {
-        return $this->container['unit'];
+        return $this->container['currencyUnit'];
     }
 
     /**
-     * Sets unit
+     * Sets currencyUnit
      *
-     * @param string $unit Currency unit, for example: 'USD'
+     * @param string $currencyUnit Currency unit, for example: 'USD'
      *
      * @return self
     
      */
-    public function setUnit($unit)
+    public function setCurrencyUnit($currencyUnit)
     {
-        if (is_null($unit)) {
-            throw new \InvalidArgumentException('non-nullable unit cannot be null');
+        if (is_null($currencyUnit)) {
+            throw new \InvalidArgumentException('non-nullable currencyUnit cannot be null');
         }
-        $allowedValues = $this->getUnitAllowableValues();
-        if (!in_array($unit, $allowedValues, true)) {
+        $allowedValues = $this->getCurrencyUnitAllowableValues();
+        if (!in_array($currencyUnit, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value '%s' for 'unit', must be one of '%s'",
-                    $unit,
+                    "Invalid value '%s' for 'currencyUnit', must be one of '%s'",
+                    $currencyUnit,
                     implode("', '", $allowedValues)
                 )
             );
         }
 
-        $this->container['unit'] = $unit;
+        $this->container['currencyUnit'] = $currencyUnit;
         return $this;
     }
 }

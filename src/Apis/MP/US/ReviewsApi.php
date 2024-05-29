@@ -134,7 +134,10 @@ class ReviewsApi extends BaseApi
                         $content = (string) $response->getBody();
                         $contentType = $response->getHeader('Content-Type')[0] ?? '';
                         if ('\Walmart\Models\MP\US\Reviews\BulkItemUpdateResponse' !== 'string') {
-                            $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
+                            if ($contentType === 'application/xml') {
+                                $content = $this->jsonEncodeXML($content);
+                            }
+                            $content = json_decode($content);
                         }
                     }
 
@@ -148,7 +151,10 @@ class ReviewsApi extends BaseApi
                 $content = (string) $response->getBody();
                 $contentType = $response->getHeader('Content-Type')[0] ?? '';
                 if ($returnType !== 'string') {
-                    $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
+                    if ($contentType === 'application/xml') {
+                        $content = $this->jsonEncodeXML($content);
+                    }
+                    $content = json_decode($content);
                 }
             }
 
@@ -430,7 +436,10 @@ class ReviewsApi extends BaseApi
                         $content = (string) $response->getBody();
                         $contentType = $response->getHeader('Content-Type')[0] ?? '';
                         if ('\Walmart\Models\MP\US\Reviews\GetCategoriesResponse' !== 'string') {
-                            $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
+                            if ($contentType === 'application/xml') {
+                                $content = $this->jsonEncodeXML($content);
+                            }
+                            $content = json_decode($content);
                         }
                     }
 
@@ -444,7 +453,10 @@ class ReviewsApi extends BaseApi
                 $content = (string) $response->getBody();
                 $contentType = $response->getHeader('Content-Type')[0] ?? '';
                 if ($returnType !== 'string') {
-                    $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
+                    if ($contentType === 'application/xml') {
+                        $content = $this->jsonEncodeXML($content);
+                    }
+                    $content = json_decode($content);
                 }
             }
 
@@ -730,7 +742,10 @@ class ReviewsApi extends BaseApi
                         $content = (string) $response->getBody();
                         $contentType = $response->getHeader('Content-Type')[0] ?? '';
                         if ('\Walmart\Models\MP\US\Reviews\GetIrpItemsResponse' !== 'string') {
-                            $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
+                            if ($contentType === 'application/xml') {
+                                $content = $this->jsonEncodeXML($content);
+                            }
+                            $content = json_decode($content);
                         }
                     }
 
@@ -744,7 +759,10 @@ class ReviewsApi extends BaseApi
                 $content = (string) $response->getBody();
                 $contentType = $response->getHeader('Content-Type')[0] ?? '';
                 if ($returnType !== 'string') {
-                    $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
+                    if ($contentType === 'application/xml') {
+                        $content = $this->jsonEncodeXML($content);
+                    }
+                    $content = json_decode($content);
                 }
             }
 

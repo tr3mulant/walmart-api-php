@@ -3,7 +3,7 @@
     "info": {
         "title": "Settings Management",
         "description": "Settings Management API",
-        "version": "0.6.3"
+        "version": "0.7.0"
     },
     "servers": [
         {
@@ -50,7 +50,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ShippingTemplate"
+                                    "$ref": "#\/components\/schemas\/ShippingTemplate",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "id": "91235658274476033",
@@ -5181,7 +5182,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ShippingTemplate"
+                                    "$ref": "#\/components\/schemas\/ShippingTemplate",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "id": "91235658274476033",
@@ -5338,7 +5340,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ShippingTemplateId"
+                                    "$ref": "#\/components\/schemas\/ShippingTemplateId",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "id": "91233632243720193"
@@ -5784,7 +5787,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ShipNodeResponseUpdate"
+                                    "$ref": "#\/components\/schemas\/ShipNodeResponseUpdate",
+                                    "x-expose-headers": true
                                 },
                                 "examples": {
                                     "Sample 1": {
@@ -6154,7 +6158,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ShippingTemplatesSummary"
+                                    "$ref": "#\/components\/schemas\/ShippingTemplatesSummary",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "shippingTemplates": [
@@ -12289,7 +12294,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ShippingTemplate"
+                                    "$ref": "#\/components\/schemas\/ShippingTemplate",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "id": "91233632243720193",
@@ -12488,7 +12494,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ShippingConfigsResponseDTO"
+                                    "$ref": "#\/components\/schemas\/ShippingConfigsResponseDTO",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "partner": {
@@ -12541,7 +12548,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ShippingTemplateActivationStatus"
+                                    "$ref": "#\/components\/schemas\/ShippingTemplateActivationStatus",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "activationStatus": "ACTIVATED",
@@ -12734,7 +12742,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/PartnerConfigsResponseDTO"
+                                    "$ref": "#\/components\/schemas\/PartnerConfigsResponseDTO",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "partner": {

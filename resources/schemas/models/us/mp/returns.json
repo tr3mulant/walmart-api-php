@@ -3,7 +3,7 @@
     "info": {
         "title": "Returns Management",
         "description": "Buyers can now Initiate Returns from Walmart.com for Marketplace seller items (Except for HAZMAT, OTHER or FREIGHT items). For item in the exception categories: HAZMAT or OTHER, sellers need to generate the return shipping label, and upload the label. For detailed instructions, and to download the Returns API JSON schema, see Returns guide.",
-        "version": "0.6.3"
+        "version": "0.7.0"
     },
     "servers": [
         {
@@ -73,7 +73,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/RefundResponse"
+                                    "$ref": "#\/components\/schemas\/RefundResponse",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "returnOrderId": "106152711271982880",
@@ -206,7 +207,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/FeedId"
+                                    "$ref": "#\/components\/schemas\/FeedId",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "feedId": "C0771C26FF1A4282A73C6F3EB659D9BF@ATgBAQA"
@@ -337,7 +339,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetReturnOrdersResponse"
+                                    "$ref": "#\/components\/schemas\/GetReturnOrdersResponse",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "meta": {

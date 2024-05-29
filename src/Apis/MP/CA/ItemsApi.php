@@ -139,7 +139,10 @@ class ItemsApi extends BaseApi
                         $content = (string) $response->getBody();
                         $contentType = $response->getHeader('Content-Type')[0] ?? '';
                         if ('\Walmart\Models\MP\CA\Items\FeedId' !== 'string') {
-                            $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
+                            if ($contentType === 'application/xml') {
+                                $content = $this->jsonEncodeXML($content);
+                            }
+                            $content = json_decode($content);
                         }
                     }
 
@@ -153,7 +156,10 @@ class ItemsApi extends BaseApi
                 $content = (string) $response->getBody();
                 $contentType = $response->getHeader('Content-Type')[0] ?? '';
                 if ($returnType !== 'string') {
-                    $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
+                    if ($contentType === 'application/xml') {
+                        $content = $this->jsonEncodeXML($content);
+                    }
+                    $content = json_decode($content);
                 }
             }
 
@@ -486,7 +492,10 @@ class ItemsApi extends BaseApi
                         $content = (string) $response->getBody();
                         $contentType = $response->getHeader('Content-Type')[0] ?? '';
                         if ('\Walmart\Models\MP\CA\Items\ItemResponses' !== 'string') {
-                            $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
+                            if ($contentType === 'application/xml') {
+                                $content = $this->jsonEncodeXML($content);
+                            }
+                            $content = json_decode($content);
                         }
                     }
 
@@ -500,7 +509,10 @@ class ItemsApi extends BaseApi
                 $content = (string) $response->getBody();
                 $contentType = $response->getHeader('Content-Type')[0] ?? '';
                 if ($returnType !== 'string') {
-                    $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
+                    if ($contentType === 'application/xml') {
+                        $content = $this->jsonEncodeXML($content);
+                    }
+                    $content = json_decode($content);
                 }
             }
 
@@ -755,11 +767,11 @@ class ItemsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\CA\Items\ItemResponse
+     * @return \Walmart\Models\MP\CA\Items\ItemResponses
      */
     public function getAnItem(
         string $sku
-    ): \Walmart\Models\MP\CA\Items\ItemResponse {
+    ): \Walmart\Models\MP\CA\Items\ItemResponses {
         return $this->getAnItemWithHttpInfo($sku);
     }
 
@@ -772,11 +784,11 @@ class ItemsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\CA\Items\ItemResponse
+     * @return \Walmart\Models\MP\CA\Items\ItemResponses
      */
     protected function getAnItemWithHttpInfo(
         string $sku,
-    ): \Walmart\Models\MP\CA\Items\ItemResponse {
+    ): \Walmart\Models\MP\CA\Items\ItemResponses {
         $request = $this->getAnItemRequest($sku);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -826,27 +838,33 @@ class ItemsApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Models\MP\CA\Items\ItemResponse' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\CA\Items\ItemResponses' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         $contentType = $response->getHeader('Content-Type')[0] ?? '';
-                        if ('\Walmart\Models\MP\CA\Items\ItemResponse' !== 'string') {
-                            $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
+                        if ('\Walmart\Models\MP\CA\Items\ItemResponses' !== 'string') {
+                            if ($contentType === 'application/xml') {
+                                $content = $this->jsonEncodeXML($content);
+                            }
+                            $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\CA\Items\ItemResponse', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\CA\Items\ItemResponses', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Models\MP\CA\Items\ItemResponse';
+            $returnType = '\Walmart\Models\MP\CA\Items\ItemResponses';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
                 $contentType = $response->getHeader('Content-Type')[0] ?? '';
                 if ($returnType !== 'string') {
-                    $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
+                    if ($contentType === 'application/xml') {
+                        $content = $this->jsonEncodeXML($content);
+                    }
+                    $content = json_decode($content);
                 }
             }
 
@@ -856,7 +874,7 @@ class ItemsApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Models\MP\CA\Items\ItemResponse',
+                        '\Walmart\Models\MP\CA\Items\ItemResponses',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -902,7 +920,7 @@ class ItemsApi extends BaseApi
     protected function getAnItemAsyncWithHttpInfo(
         string $sku,
     ): PromiseInterface {
-        $returnType = '\Walmart\Models\MP\CA\Items\ItemResponse';
+        $returnType = '\Walmart\Models\MP\CA\Items\ItemResponses';
         $request = $this->getAnItemRequest($sku);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -1139,7 +1157,10 @@ class ItemsApi extends BaseApi
                         $content = (string) $response->getBody();
                         $contentType = $response->getHeader('Content-Type')[0] ?? '';
                         if ('\Walmart\Models\MP\CA\Items\ItemRetireResponseV2' !== 'string') {
-                            $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
+                            if ($contentType === 'application/xml') {
+                                $content = $this->jsonEncodeXML($content);
+                            }
+                            $content = json_decode($content);
                         }
                     }
 
@@ -1153,7 +1174,10 @@ class ItemsApi extends BaseApi
                 $content = (string) $response->getBody();
                 $contentType = $response->getHeader('Content-Type')[0] ?? '';
                 if ($returnType !== 'string') {
-                    $content = $contentType === 'application/xml' ? simplexml_load_string($content) : json_decode($content);
+                    if ($contentType === 'application/xml') {
+                        $content = $this->jsonEncodeXML($content);
+                    }
+                    $content = json_decode($content);
                 }
             }
 

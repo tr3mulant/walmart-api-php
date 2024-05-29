@@ -3,7 +3,7 @@
     "info": {
         "title": "Insights Management",
         "description": "The Insights Management API provides sellers with actionable information to optimize their listings:\n*   Sellers can locate best-selling items with Trending Items API so they can add those to their catalog of item offerings. \n*   Sellers can find out reasons why items go unpublished, fix the issue and republish those items.\n*   Sellers can use Listing Quality APIs to gather listing quality metrics about their items and find out any post-production issues that they can fix.\n*   Sellers can obtain their overall Listing Quality score, and locate any categories that show items with listing quality issues.",
-        "version": "0.6.3"
+        "version": "0.7.0"
     },
     "servers": [
         {
@@ -115,7 +115,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ItemDetailsLQResponsePayload"
+                                    "$ref": "#\/components\/schemas\/ItemDetailsLQResponsePayload",
+                                    "x-expose-headers": true
                                 },
                                 "examples": {
                                     "Query for SKU": {
@@ -939,7 +940,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ProSellerResponse"
+                                    "$ref": "#\/components\/schemas\/ProSellerResponse",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "hasBadge": true,
@@ -1056,7 +1058,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetUnpublishedItem"
+                                    "$ref": "#\/components\/schemas\/GetUnpublishedItem",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "payload": [
@@ -1198,7 +1201,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetUnpublishedItemsCount"
+                                    "$ref": "#\/components\/schemas\/GetUnpublishedItemsCount",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "payload": [
@@ -1305,7 +1309,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetTrendingResult"
+                                    "$ref": "#\/components\/schemas\/GetTrendingResult",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "status": "SUCCESS",
@@ -1409,7 +1414,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetListingQualityScore"
+                                    "$ref": "#\/components\/schemas\/GetListingQualityScore",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "payload": {
@@ -1521,7 +1527,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetListingQualityScore"
+                                    "$ref": "#\/components\/schemas\/GetListingQualityScore",
+                                    "x-expose-headers": true
                                 },
                                 "examples": {
                                     "Categories With Issues": {

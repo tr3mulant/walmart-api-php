@@ -3,7 +3,7 @@
     "info": {
         "title": "Fulfillment Management",
         "description": "With Walmart Fulfillment Services, you can focus on sales while we expertly take care of fast shipping, seamless returns, and customer service. Simply send your inventory to Walmart fulfillment centers, where we will store your products securely and prepare them swiftly for shipping when an order is placed.",
-        "version": "0.6.3"
+        "version": "0.7.0"
     },
     "servers": [
         {
@@ -61,7 +61,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ServiceResponse"
+                                    "$ref": "#\/components\/schemas\/ServiceResponse",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "status": "OK"
@@ -124,7 +125,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ServiceResponse"
+                                    "$ref": "#\/components\/schemas\/ServiceResponse",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "status": "OK",
@@ -209,7 +211,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ServiceResponse"
+                                    "$ref": "#\/components\/schemas\/ServiceResponse",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "status": "OK"
@@ -369,7 +372,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CustomerOrderDetailsResponseWrapperDTO"
+                                    "$ref": "#\/components\/schemas\/CustomerOrderDetailsResponseWrapperDTO",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "status": "ACCEPTED",
@@ -465,7 +469,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/PromiseOrderResponseWrapper"
+                                    "$ref": "#\/components\/schemas\/PromiseOrderResponseWrapper",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "status": "ACCEPTED",
@@ -623,7 +628,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CustomerOrderDetailsResponseWrapperDTO"
+                                    "$ref": "#\/components\/schemas\/CustomerOrderDetailsResponseWrapperDTO",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "status": "ACCEPTED",
@@ -733,7 +739,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/InboundShipmentErrorResponseWrapperDTO"
+                                    "$ref": "#\/components\/schemas\/InboundShipmentErrorResponseWrapperDTO",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "headers": {
@@ -1073,7 +1080,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/InboundShipmentCreateResponseWrapperDTO"
+                                    "$ref": "#\/components\/schemas\/InboundShipmentCreateResponseWrapperDTO",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "status": "OK",
@@ -1174,7 +1182,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/InboundPreviewResponseWrapper"
+                                    "$ref": "#\/components\/schemas\/InboundPreviewResponseWrapper",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "status": "OK",
@@ -1311,7 +1320,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetRateQuoteInfoResponseWrapper"
+                                    "$ref": "#\/components\/schemas\/GetRateQuoteInfoResponseWrapper",
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -1348,7 +1358,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/QuoteResponseV2Wrapper"
+                                    "$ref": "#\/components\/schemas\/QuoteResponseV2Wrapper",
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -1387,7 +1398,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ServiceResponse"
+                                    "$ref": "#\/components\/schemas\/ServiceResponse",
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -1435,7 +1447,8 @@
                         "content": {
                             "application\/pdf": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ServiceResponse"
+                                    "$ref": "#\/components\/schemas\/ServiceResponse",
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -1566,7 +1579,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/FeedId"
+                                    "$ref": "#\/components\/schemas\/FeedId",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "feedId": "FFE538D9B25A4000AD2A067ACEDCF4C4@AUoBAQA"
@@ -1727,7 +1741,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CustomerOrderResponseWrapperDTO"
+                                    "$ref": "#\/components\/schemas\/CustomerOrderResponseWrapperDTO",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "status": "OK",
@@ -2003,7 +2018,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/InventoryLogResponseWrapper"
+                                    "$ref": "#\/components\/schemas\/InventoryLogResponseWrapper",
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -2065,7 +2081,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/InboundShipmentErrorResponseWrapperDTO"
+                                    "$ref": "#\/components\/schemas\/InboundShipmentErrorResponseWrapperDTO",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "headers": {
@@ -2196,7 +2213,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/InboundShipmentErrorResponseWrapperDTO"
+                                    "$ref": "#\/components\/schemas\/InboundShipmentErrorResponseWrapperDTO",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "headers": {
@@ -2298,7 +2316,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ServiceResponse"
+                                    "$ref": "#\/components\/schemas\/ServiceResponse",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "status": "OK"
@@ -2339,7 +2358,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ServiceResponse"
+                                    "$ref": "#\/components\/schemas\/ServiceResponse",
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -2853,7 +2873,7 @@
             "CurrencyType": {
                 "required": [
                     "currencyAmount",
-                    "unit"
+                    "currencyUnit"
                 ],
                 "type": "object",
                 "properties": {
@@ -2861,7 +2881,7 @@
                         "type": "number",
                         "description": "Currency amount, preferred value: 0"
                     },
-                    "unit": {
+                    "currencyUnit": {
                         "type": "string",
                         "description": "Currency unit, for example: 'USD'",
                         "xml": {

@@ -82,7 +82,7 @@ class NameValueAttributes extends BaseModel
      * @var string[]
      */
     protected static array $attributeMap = [
-        'nameValueAttribute' => 'nameValueAttribute'
+        'nameValueAttribute' => 'NameValueAttribute'
     ];
 
     /**

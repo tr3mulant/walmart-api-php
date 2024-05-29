@@ -3,7 +3,7 @@
     "info": {
         "title": "Order Management",
         "description": "The Walmart Order Management APIs help Sellers to manage customer\u2019s Sales Orders and to stay up-to-date on orders fulfillment, which orders to fulfill, and when to fulfill them.",
-        "version": "0.6.3"
+        "version": "0.7.0"
     },
     "servers": [
         {
@@ -87,7 +87,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorResponse"
+                                    "$ref": "#\/components\/schemas\/ErrorResponse",
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -97,7 +98,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorResponse"
+                                    "$ref": "#\/components\/schemas\/ErrorResponse",
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -169,7 +171,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorResponse"
+                                    "$ref": "#\/components\/schemas\/ErrorResponse",
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -179,7 +182,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorResponse"
+                                    "$ref": "#\/components\/schemas\/ErrorResponse",
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -263,7 +267,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorResponse"
+                                    "$ref": "#\/components\/schemas\/ErrorResponse",
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -273,7 +278,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorResponse"
+                                    "$ref": "#\/components\/schemas\/ErrorResponse",
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -355,7 +361,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorResponse"
+                                    "$ref": "#\/components\/schemas\/ErrorResponse",
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -365,7 +372,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorResponse"
+                                    "$ref": "#\/components\/schemas\/ErrorResponse",
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -443,7 +451,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorResponse"
+                                    "$ref": "#\/components\/schemas\/ErrorResponse",
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -540,7 +549,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/WFSOrderResponse"
+                                    "$ref": "#\/components\/schemas\/WFSOrderResponse",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "meta": {
@@ -1780,7 +1790,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorResponse"
+                                    "$ref": "#\/components\/schemas\/ErrorResponse",
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -1790,7 +1801,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorResponse"
+                                    "$ref": "#\/components\/schemas\/ErrorResponse",
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -1877,7 +1889,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/WFSOrderResponse"
+                                    "$ref": "#\/components\/schemas\/WFSOrderResponse",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "meta": {
@@ -2428,7 +2441,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorResponse"
+                                    "$ref": "#\/components\/schemas\/ErrorResponse",
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -2438,7 +2452,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorResponse"
+                                    "$ref": "#\/components\/schemas\/ErrorResponse",
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -2535,7 +2550,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/MxOrderWithCursor"
+                                    "$ref": "#\/components\/schemas\/MxOrderWithCursor",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "meta": {
@@ -4584,7 +4600,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorResponse"
+                                    "$ref": "#\/components\/schemas\/ErrorResponse",
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -4594,7 +4611,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ErrorResponse"
+                                    "$ref": "#\/components\/schemas\/ErrorResponse",
+                                    "x-expose-headers": true
                                 }
                             }
                         }

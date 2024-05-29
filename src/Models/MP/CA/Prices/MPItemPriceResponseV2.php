@@ -50,12 +50,12 @@ class MPItemPriceResponseV2 extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'errors' => '\Walmart\Models\MP\CA\Prices\GatewayError[]',
         'mart' => 'string',
         'sku' => 'string',
         'currency' => 'string',
         'amount' => 'string',
-        'message' => 'string'
+        'message' => 'string',
+        'error' => '\Walmart\Models\MP\CA\Prices\GatewayError[]'
     ];
 
     /**
@@ -66,12 +66,12 @@ class MPItemPriceResponseV2 extends BaseModel
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'errors' => null,
         'mart' => null,
         'sku' => null,
         'currency' => null,
         'amount' => null,
-        'message' => null
+        'message' => null,
+        'error' => null
     ];
 
     /**
@@ -80,12 +80,12 @@ class MPItemPriceResponseV2 extends BaseModel
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'errors' => false,
         'mart' => false,
         'sku' => false,
         'currency' => false,
         'amount' => false,
-        'message' => false
+        'message' => false,
+        'error' => false
     ];
 
     /**
@@ -95,12 +95,12 @@ class MPItemPriceResponseV2 extends BaseModel
      * @var string[]
      */
     protected static array $attributeMap = [
-        'errors' => 'errors',
         'mart' => 'mart',
         'sku' => 'sku',
         'currency' => 'currency',
         'amount' => 'amount',
-        'message' => 'message'
+        'message' => 'message',
+        'error' => 'error'
     ];
 
     /**
@@ -109,12 +109,12 @@ class MPItemPriceResponseV2 extends BaseModel
      * @var string[]
      */
     protected static array $setters = [
-        'errors' => 'setErrors',
         'mart' => 'setMart',
         'sku' => 'setSku',
         'currency' => 'setCurrency',
         'amount' => 'setAmount',
-        'message' => 'setMessage'
+        'message' => 'setMessage',
+        'error' => 'setError'
     ];
 
     /**
@@ -123,12 +123,12 @@ class MPItemPriceResponseV2 extends BaseModel
      * @var string[]
      */
     protected static array $getters = [
-        'errors' => 'getErrors',
         'mart' => 'getMart',
         'sku' => 'getSku',
         'currency' => 'getCurrency',
         'amount' => 'getAmount',
-        'message' => 'getMessage'
+        'message' => 'getMessage',
+        'error' => 'getError'
     ];
 
     /**
@@ -139,12 +139,12 @@ class MPItemPriceResponseV2 extends BaseModel
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('errors', $data ?? [], null);
         $this->setIfExists('mart', $data ?? [], null);
         $this->setIfExists('sku', $data ?? [], null);
         $this->setIfExists('currency', $data ?? [], null);
         $this->setIfExists('amount', $data ?? [], null);
         $this->setIfExists('message', $data ?? [], null);
+        $this->setIfExists('error', $data ?? [], null);
     }
 
     /**
@@ -158,35 +158,6 @@ class MPItemPriceResponseV2 extends BaseModel
 
 
         return $invalidProperties;
-    }
-
-    /**
-     * Gets errors
-     *
-     * @return \Walmart\Models\MP\CA\Prices\GatewayError[]|null
-    
-     */
-    public function getErrors()
-    {
-        return $this->container['errors'];
-    }
-
-    /**
-     * Sets errors
-     *
-     * @param \Walmart\Models\MP\CA\Prices\GatewayError[]|null $errors errors
-     *
-     * @return self
-    
-     */
-    public function setErrors($errors)
-    {
-        if (is_null($errors)) {
-            throw new \InvalidArgumentException('non-nullable errors cannot be null');
-        }
-
-        $this->container['errors'] = $errors;
-        return $this;
     }
 
     /**
@@ -331,6 +302,35 @@ class MPItemPriceResponseV2 extends BaseModel
         }
 
         $this->container['message'] = $message;
+        return $this;
+    }
+
+    /**
+     * Gets error
+     *
+     * @return \Walmart\Models\MP\CA\Prices\GatewayError[]|null
+    
+     */
+    public function getError()
+    {
+        return $this->container['error'];
+    }
+
+    /**
+     * Sets error
+     *
+     * @param \Walmart\Models\MP\CA\Prices\GatewayError[]|null $error error
+     *
+     * @return self
+    
+     */
+    public function setError($error)
+    {
+        if (is_null($error)) {
+            throw new \InvalidArgumentException('non-nullable error cannot be null');
+        }
+
+        $this->container['error'] = $error;
         return $this;
     }
 }

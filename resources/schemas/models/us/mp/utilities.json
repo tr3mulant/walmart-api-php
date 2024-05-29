@@ -3,7 +3,7 @@
     "info": {
         "title": "Utilities Management",
         "description": "Utilities Management API",
-        "version": "0.6.3"
+        "version": "0.7.0"
     },
     "servers": [
         {
@@ -67,7 +67,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/TaxonomyResponseDTO"
+                                    "$ref": "#\/components\/schemas\/TaxonomyResponseDTO",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "status": "SUCCESS",
@@ -130,7 +131,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetDepartmentList"
+                                    "$ref": "#\/components\/schemas\/GetDepartmentList",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "status": "SUCCESS",
@@ -267,7 +269,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetCategories"
+                                    "$ref": "#\/components\/schemas\/GetCategories",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "status": "SUCCESS",
@@ -324,7 +327,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/StatusAPIResponse"
+                                    "$ref": "#\/components\/schemas\/StatusAPIResponse",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "apiStatuses": [

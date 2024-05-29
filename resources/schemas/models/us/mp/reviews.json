@@ -3,7 +3,7 @@
     "info": {
         "title": "Reviews Acceleration",
         "description": "The Reviews Acceleration API provides sellers with capability to view and enroll items into review accelerator programs:\n\n*   Sellers can view their eligible product catalog that can be enrolled into Review Accelerator program(RAP) using Get RAP post-purchase items API\n*   Sellers can view their currently enrolled products using Get RAP post-purchase items API\n*   Sellers can leverage Get RAP post-purchase items API to get all products that have attained target reviews after enrolment into the program\n*   Sellers can filter the products on the basis of category and price. They can also sort based on item priority and search using product name and SKU\n*   Sellers can enroll a product\/multiple products into the program using update item status API\n",
-        "version": "0.6.3"
+        "version": "0.7.0"
     },
     "servers": [
         {
@@ -79,7 +79,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/BulkItemUpdateResponse"
+                                    "$ref": "#\/components\/schemas\/BulkItemUpdateResponse",
+                                    "x-expose-headers": true
                                 },
                                 "examples": {
                                     "Enrol Items": {
@@ -241,7 +242,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetIrpItemsResponse"
+                                    "$ref": "#\/components\/schemas\/GetIrpItemsResponse",
+                                    "x-expose-headers": true
                                 },
                                 "examples": {
                                     "Get Eligible Items": {
@@ -397,7 +399,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetCategoriesResponse"
+                                    "$ref": "#\/components\/schemas\/GetCategoriesResponse",
+                                    "x-expose-headers": true
                                 },
                                 "examples": {
                                     "Get categories with status": {

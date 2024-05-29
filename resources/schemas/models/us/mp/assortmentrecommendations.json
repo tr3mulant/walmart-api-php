@@ -3,7 +3,7 @@
     "info": {
         "title": "Assortment Recommendations",
         "description": "Assortment growth recommendations help sellers onboard the in-demand catalog. We leverage customer demand signals to generate personalized catalog recommendations for the sellers.\n\nSome of these signals include- \n*   Internal and external search \n*   Walmart Best Sellers\n*   Top trending items\n\nSellers can shortlist and download the recommendations using filters such as brand, category, pricing and item availability status on Walmart. Sellers can then proceed to set up the items based on these recommendations using the Item Setup APIs.\n",
-        "version": "0.6.3"
+        "version": "0.7.0"
     },
     "servers": [
         {
@@ -120,7 +120,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/RejectRecommendationsResponse"
+                                    "$ref": "#\/components\/schemas\/RejectRecommendationsResponse",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "payload": {
@@ -232,7 +233,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/RejectRecommendationsResponse"
+                                    "$ref": "#\/components\/schemas\/RejectRecommendationsResponse",
+                                    "x-expose-headers": true
                                 },
                                 "examples": {
                                     "All item recommendations": {
@@ -517,7 +519,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/RejectRecommendationsResponse"
+                                    "$ref": "#\/components\/schemas\/RejectRecommendationsResponse",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "payload": {
@@ -629,7 +632,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CategorizationResponse"
+                                    "$ref": "#\/components\/schemas\/CategorizationResponse",
+                                    "x-expose-headers": true
                                 },
                                 "examples": {
                                     "All brands associated with the item recommendations": {
@@ -765,7 +769,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/RequestStatusResponseObj"
+                                    "$ref": "#\/components\/schemas\/RequestStatusResponseObj",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "payload": {
@@ -817,7 +822,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/FileDownloadDetailResponsePayload"
+                                    "$ref": "#\/components\/schemas\/FileDownloadDetailResponsePayload",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "payload": {

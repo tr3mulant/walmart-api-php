@@ -52,9 +52,9 @@ class PurchaseOrderTypeV3List extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'errors' => '\Walmart\Models\MP\US\Orders\GatewayError[]',
         'meta' => '\Walmart\Models\MP\US\Orders\MetaType',
-        'elements' => '\Walmart\Models\MP\US\Orders\ElementsType'
+        'elements' => '\Walmart\Models\MP\US\Orders\ElementsType',
+        'error' => '\Walmart\Models\MP\US\Orders\GatewayError[]'
     ];
 
     /**
@@ -65,9 +65,9 @@ class PurchaseOrderTypeV3List extends BaseModel
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'errors' => null,
         'meta' => null,
-        'elements' => null
+        'elements' => null,
+        'error' => null
     ];
 
     /**
@@ -76,9 +76,9 @@ class PurchaseOrderTypeV3List extends BaseModel
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'errors' => false,
         'meta' => false,
-        'elements' => false
+        'elements' => false,
+        'error' => false
     ];
 
     /**
@@ -88,9 +88,9 @@ class PurchaseOrderTypeV3List extends BaseModel
      * @var string[]
      */
     protected static array $attributeMap = [
-        'errors' => 'errors',
         'meta' => 'meta',
-        'elements' => 'elements'
+        'elements' => 'elements',
+        'error' => 'error'
     ];
 
     /**
@@ -99,9 +99,9 @@ class PurchaseOrderTypeV3List extends BaseModel
      * @var string[]
      */
     protected static array $setters = [
-        'errors' => 'setErrors',
         'meta' => 'setMeta',
-        'elements' => 'setElements'
+        'elements' => 'setElements',
+        'error' => 'setError'
     ];
 
     /**
@@ -110,9 +110,9 @@ class PurchaseOrderTypeV3List extends BaseModel
      * @var string[]
      */
     protected static array $getters = [
-        'errors' => 'getErrors',
         'meta' => 'getMeta',
-        'elements' => 'getElements'
+        'elements' => 'getElements',
+        'error' => 'getError'
     ];
 
     /**
@@ -123,9 +123,9 @@ class PurchaseOrderTypeV3List extends BaseModel
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('errors', $data ?? [], null);
         $this->setIfExists('meta', $data ?? [], null);
         $this->setIfExists('elements', $data ?? [], null);
+        $this->setIfExists('error', $data ?? [], null);
     }
 
     /**
@@ -145,35 +145,6 @@ class PurchaseOrderTypeV3List extends BaseModel
         }
 
         return $invalidProperties;
-    }
-
-    /**
-     * Gets errors
-     *
-     * @return \Walmart\Models\MP\US\Orders\GatewayError[]|null
-    
-     */
-    public function getErrors()
-    {
-        return $this->container['errors'];
-    }
-
-    /**
-     * Sets errors
-     *
-     * @param \Walmart\Models\MP\US\Orders\GatewayError[]|null $errors errors
-     *
-     * @return self
-    
-     */
-    public function setErrors($errors)
-    {
-        if (is_null($errors)) {
-            throw new \InvalidArgumentException('non-nullable errors cannot be null');
-        }
-
-        $this->container['errors'] = $errors;
-        return $this;
     }
 
     /**
@@ -231,6 +202,35 @@ class PurchaseOrderTypeV3List extends BaseModel
         }
 
         $this->container['elements'] = $elements;
+        return $this;
+    }
+
+    /**
+     * Gets error
+     *
+     * @return \Walmart\Models\MP\US\Orders\GatewayError[]|null
+    
+     */
+    public function getError()
+    {
+        return $this->container['error'];
+    }
+
+    /**
+     * Sets error
+     *
+     * @param \Walmart\Models\MP\US\Orders\GatewayError[]|null $error error
+     *
+     * @return self
+    
+     */
+    public function setError($error)
+    {
+        if (is_null($error)) {
+            throw new \InvalidArgumentException('non-nullable error cannot be null');
+        }
+
+        $this->container['error'] = $error;
         return $this;
     }
 }

@@ -3,7 +3,7 @@
     "info": {
         "title": "Order Management",
         "description": "The Walmart Order Management APIs help Sellers to manage customer\u2019s Sales Orders and to stay up-to-date on orders fulfillment, which orders to fulfill, and when to fulfill them.",
-        "version": "0.6.3"
+        "version": "0.7.0"
     },
     "servers": [
         {
@@ -134,7 +134,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetOrderResponse"
+                                    "$ref": "#\/components\/schemas\/GetOrderResponse",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "order": {
@@ -314,7 +315,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetOrderResponse"
+                                    "$ref": "#\/components\/schemas\/GetOrderResponse",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "order": {
@@ -508,7 +510,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetOrderResponse"
+                                    "$ref": "#\/components\/schemas\/GetOrderResponse",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "order": {
@@ -631,7 +634,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetOrderResponse"
+                                    "$ref": "#\/components\/schemas\/GetOrderResponse",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "order": {
@@ -928,7 +932,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/PurchaseOrderTypeV3"
+                                    "$ref": "#\/components\/schemas\/PurchaseOrderTypeV3",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "list": {
@@ -1750,7 +1755,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/Order"
+                                    "$ref": "#\/components\/schemas\/Order",
+                                    "x-expose-headers": true
                                 },
                                 "examples": {
                                     "ORDER": {
@@ -2126,7 +2132,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/PurchaseOrderTypeV3"
+                                    "$ref": "#\/components\/schemas\/PurchaseOrderTypeV3",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "list": {
@@ -3826,7 +3833,10 @@
             "PhoneValidity": {
                 "type": "object",
                 "properties": {
-                    "validationType": {
+                    "validatedBy": {
+                        "type": "string"
+                    },
+                    "type": {
                         "type": "string",
                         "xml": {
                             "name": "type"
@@ -3838,7 +3848,7 @@
                             "UNKNOWN"
                         ]
                     },
-                    "validationStatus": {
+                    "status": {
                         "type": "string",
                         "xml": {
                             "name": "status"
@@ -3850,15 +3860,12 @@
                             "UNKNOWN"
                         ]
                     },
-                    "validatedDate": {
+                    "validatedOn": {
                         "type": "string",
                         "format": "date-time",
                         "xml": {
                             "name": "validatedOn"
                         }
-                    },
-                    "validatedBy": {
-                        "type": "string"
                     }
                 },
                 "xml": {
@@ -4673,7 +4680,13 @@
                 ],
                 "type": "object",
                 "properties": {
-                    "errors": {
+                    "meta": {
+                        "$ref": "#\/components\/schemas\/MetaType"
+                    },
+                    "elements": {
+                        "$ref": "#\/components\/schemas\/ElementsType"
+                    },
+                    "error": {
                         "type": "array",
                         "xml": {
                             "name": "error"
@@ -4681,12 +4694,6 @@
                         "items": {
                             "$ref": "#\/components\/schemas\/GatewayError"
                         }
-                    },
-                    "meta": {
-                        "$ref": "#\/components\/schemas\/MetaType"
-                    },
-                    "elements": {
-                        "$ref": "#\/components\/schemas\/ElementsType"
                     }
                 },
                 "description": "List of purchase orders in created state",

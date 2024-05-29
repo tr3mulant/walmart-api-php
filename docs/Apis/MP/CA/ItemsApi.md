@@ -148,7 +148,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `getAnItem()`
 
 ```php
-getAnItem($sku): \Walmart\Models\MP\CA\Items\ItemResponse
+getAnItem($sku): \Walmart\Models\MP\CA\Items\ItemResponses
 ```
 Get an item
 
@@ -192,7 +192,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\Items\ItemResponse**](../../../Models/MP/CA/Items/ItemResponse.md)
+[**\Walmart\Models\MP\CA\Items\ItemResponses**](../../../Models/MP/CA/Items/ItemResponses.md)
 
 ### Authorization
 
