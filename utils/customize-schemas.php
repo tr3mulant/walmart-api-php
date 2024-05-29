@@ -106,6 +106,26 @@ function customizeSchema(
             // Standardize tags based on our internal naming convention (derived from resources/apis.json)
             $verb['tags'] = [$apiName];
 
+            $security = $verb['security'][0] ?? [];
+
+            // Get the original security key and preserve auth information
+            if (count($security)) {
+                foreach($security as $name => $securityParameters) {
+
+                    // The JSON structure we're using for the security objects implies that if there are
+                    // multiple security schemes, they are ALL required. This AND relationship, rather than
+                    // an OR relationship, is indicated by a small syntactical difference in the security key's
+                    // JSON structure. See here for more info: https://swagger.io/docs/specification/authentication
+                    $security[$name] = [];
+
+                    // Track which security schemes have been used so we can add them to the overall schema
+                    if (!in_array($name, $usedSecuritySchemes, true)) {
+                        $usedSecuritySchemes[] = $name;
+                    }
+
+                }
+            }
+
             // Update each operation's parameters and auth information
             foreach ($verb['parameters'] as $i => $parameter) {    
                 if ($parameter['in'] === 'header' && in_array($parameter['name'], $ignoreHeaders, true)) {
@@ -239,7 +259,7 @@ function replaceRequestResponseSchemas(array $verbSchema, array $componentSchema
 
         $properties = match ($responseSchema['type']) {
             'object' => array_keys($responseSchema['properties']),
-            'array' => array_keys($responseSchema['items']['properties']),
+            'array' => array_keys($responseSchema['items']['properties'] ?? []),
             default => [],
         };
 
@@ -301,6 +321,23 @@ function replaceComponentInlineSchemas(array $components): array
         }
 
         foreach ($component['properties'] as $propertyName => $property) {
+            // swap property names for xml names
+            if (isset($property['xml'])) {
+                $newName = $property['xml']['name'] ?? $propertyName;
+
+                if ($propertyName !== $newName) {
+                    $component['properties'][$newName] = $property;
+
+                    unset($component['properties'][$propertyName]);
+
+                    $idx = array_search($propertyName, $component['required'] ?? []);
+
+                    if($idx !== false) {
+                        $component['required'][$idx] = $newName;
+                    }
+                }
+            }
+
             if (
                 !isset($property['type'])
                 || (!isset($property['properties']) && !isset($property['items']['properties']))
