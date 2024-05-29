@@ -87,7 +87,7 @@ function customizeSchema(
     $componentSchemas = $schema['components']['schemas'] ?? null;
 
     if (!is_null($componentSchemas)) {
-        $schema['components']['schemas'] = replaceComponentInlineSchemas($componentSchemas);
+        $schema['components']['schemas'] = replaceComponentInlineSchemas($componentSchemas, $country);
     }
 
     foreach ($schema['paths'] as $p => $apiPath) {
@@ -311,9 +311,10 @@ function replaceRequestResponseSchemas(array $verbSchema, array $componentSchema
  * with references to the component schemas.
  *
  * @param array $components The components section of an OpenAPI schema
+ * @param string $country The country owning the schema
  * @return array The updated components section
  */
-function replaceComponentInlineSchemas(array $components): array
+function replaceComponentInlineSchemas(array $components, string $country): array
 {
     foreach ($components as $componentName => $component) {
         if (!isset($component['properties'])) {
@@ -322,7 +323,7 @@ function replaceComponentInlineSchemas(array $components): array
 
         foreach ($component['properties'] as $propertyName => $property) {
             // swap property names for xml names
-            if (isset($property['xml'])) {
+            if (isset($property['xml']) && $country === 'ca') {
                 $newName = $property['xml']['name'] ?? $propertyName;
 
                 if ($propertyName !== $newName) {
