@@ -29,7 +29,7 @@
         "guzzlehttp/guzzle": "^7.4",
         "guzzlehttp/psr7": "^1.7 || ^2.0",
         "ramsey/uuid": "^4.7",
-        "symfony/uid": "^6.1",
+        "symfony/uid": "^7.1",
         "phpseclib/phpseclib": "^3.0"
     },
     "require-dev": {
@@ -57,9 +57,13 @@
         "lint": "php vendor/bin/php-cs-fixer fix --allow-risky=yes -vvv"
     },
     "autoload": {
-        "psr-4": { "Walmart\\" : "src/" }
+        "psr-4": {
+            "Walmart\\": "src/"
+        }
     },
     "autoload-dev": {
-        "psr-4": { "Walmart\\Test\\" : "test/" }
+        "psr-4": {
+            "Walmart\\Test\\": "test/"
+        }
     }
 }
